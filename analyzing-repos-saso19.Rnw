@@ -1,28 +1,27 @@
-\documentclass[letterpaper]{article}
-\usepackage{natbib,alifeconf}
-\usepackage{graphicx}        % standard LaTeX graphics tool
-\usepackage{url} 
-\usepackage[utf8]{inputenc}
+\documentclass[conference]{IEEEtran}
 
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
-\SweaveOpts{concordance=TRUE}
 
-
-\title{Self-organized criticality in code repositories}
-
-\author{J. J. Merelo$^{1}$, P. A. Castillo$^{1}$, Antonio M. Mora$^1$, Mario
-  Garc\'ia-Valdez$^{2}$, Carlos Cotta${^3}$, Carlos Fernandes${^4}$ \\
-\mbox{}\\
-$^1$ Geneura Team, ETSIIT and CITIC, University of Granada (Spain),
-{\tt \{jmerelo,pacv,amorag\}@ugr.es}\\
-$^2$ Dept. of Graduate Studies, Instituto Tecnol\'ogico de Tijuana
-(Mexico) {\tt mario@tectijuana.edu.mx}\\
-$^3$ Dept. Lenguajes y Ciencias de la Computaci\'on, Universidad de M\'alaga (Spain), {\tt ccottap@lcc.uma.es}\\
-$^4$ LASEEB, Lisbon (Portugal), {\tt cfernandes@laseeb.org}
+\title{Power laws in code repositories revisited
+  \thanks{ This paper has been supported in part by
+    project DeepBio (TIN2017-85727-C4-2-P)}
 }
 
-%\SweaveOpts{concordance=TRUE}
-% is it possible using relative-paths instead of absolute paths to set the file names?
+\author{\IEEEauthorblockN{B. Ortiz}
+  \and
+\IEEEauthorblockN{ J. J. Merelo}
+\IEEEauthorblockA{Geneura Team, ETSIIT and CITIC, University of Granada (Spain),
+{\tt \{bortiz,jmerelo}@ugr.es}
+}
+
 <<setup, cache=FALSE,echo=FALSE,warning=FALSE,message=FALSE>>=
 library(ggplot2)
 library("ggfortify")
@@ -718,12 +717,6 @@ sizes, as well as the relation between number of changes and its
 size. We will try to leverage repository measurements to develop
 methodologies that improve collaboration and productivity. 
 
-
-\section*{Acknowledgements}
-
-This work has been supported in part by the Spanish Ministry of 
-Econom\'{\i}a y Competitividad, project
-TIN2014-56494-C4-\{1,3\}-P (\{UMA,UGR\}-EPHEMECH) and by CONACYT project 220590.
 
 \bibliographystyle{apalike}
 \bibliography{geneura,biblio}
