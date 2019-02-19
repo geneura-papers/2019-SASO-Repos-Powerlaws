@@ -1,0 +1,36 @@
+diff --git a/scripts/diff-parser.pl b/scripts/diff-parser.pl
+index ecee37a..a90c829 100644
+--- a/scripts/diff-parser.pl
++++ b/scripts/diff-parser.pl
+@@ -13,5 +13,5 @@ foreach my $change ( $parser->changes ) {
+     
+-print
++say
+  "File1: ", $change->filename1;
+~
+     
+-print
++say
+  "Line1: ", $change->line1;
+~
+     
+-print
++say
+  "File2: ", $change->filename2;
+~
+     
+-print
++say
+  "Line2: ", $change->line2;
+~
+     
+-print
++say
+  "Type: ", $change->type;
+~
+@@ -20 +20 @@ foreach my $change ( $parser->changes ) {
+         
+-print
++say
+  "Line: ", $change->text( $line );
+~

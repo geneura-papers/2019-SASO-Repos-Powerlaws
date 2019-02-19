@@ -6,7 +6,7 @@ use Text::Diff::Parser;
 
 use v5.14;
 
-my $file = "../diff-example-porcelain.txt";
+my $file = "../diff-file.txt";
 
 my $parser = Text::Diff::Parser->new( File=>$file );
 foreach my $change ( $parser->changes ) {
