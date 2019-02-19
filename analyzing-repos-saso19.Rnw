@@ -432,33 +432,6 @@ similar no matter what is the thing that is actually written. However, some repo
 % Un revisor del GECCO pidió explicar esta frase - Pedro
 In the big picture of the self-organization of the repository, its impact will have to be assessed, but in principle it would not have to have an influence on the overall state, since their scale will also follow the same principles. 
 
-% in this figure, the different subplots should be identified (maybe including the name of repo in each case)  - Pedro
-% It would take too much space. I'll just erase them all. Changed a
-% bit, anyway - JJ
-%\includegraphics{analyzing-paper_files/figure-latex/smoothie-1.pdf}
-\begin{figure*}[h!tb]
-  \centering
-<<smoothie,message=FALSE,echo=FALSE,warning=FALSE,fig.height=7,fig.subcap=summary$Name,out.width='.115\\linewidth'>>=
-for (i in 1:length(lines) ) {
-    lines[[i]]$x = as.numeric(row.names(lines[[i]]))
-    print(ggplot(lines[[i]]) +geom_line(aes(x=x,y=SMA10,color='SMA10'))+geom_line(aes(x=x,y=SMA20,color='SMA20'))+scale_y_log10()+ theme_tufte() + theme(legend.position="none",axis.title.x=element_blank(),axis.title.y=element_blank()))
-
-}
-@ 
-\caption{Log of change size vs. commit number for all repositories, lines smoothed
-  over 20 (blue) and 10 (red) changes. The order of the
-  repositories is the same as in Table \ref{t:stat}. \label{fig:smoothie}}
-\end{figure*}
-% one of the GECCO reviewers said: "The text in figures 1, 2, 3, 4, and 5 is not readable".    -   pedro
-% It is not needed, actually. The best is probably to suppress it - JJ
-The timeline of the commit sizes is represented in a line chart in Figure \ref{fig:smoothie} with logarithmic \emph{y} scale and smoothing over several commits, either 10
-or 20, depending on the color. The \emph{x} axis is simply the temporal
-sequence of commits, while the \emph{y} axis is the absolute size of the
-commit in number of lines. There are big changes in scale certain
-\emph{rhythm} can be observed, which hints at large-scale
-correlations, which has been created by current changes influencing other changes
-that occur several, or many, steps in the future. 
-
 Besides, these variations in scale might mean that commit sizes are distributed along a Pareto
 distribution. We will examine this next, representing the number of changes of a particular
 size in a log-log scale, with linear smoothing to show trends, in
