@@ -10,13 +10,13 @@ my $file = "../diff-example-porcelain.txt";
 
 my $parser = Text::Diff::Parser->new( File=>$file );
 foreach my $change ( $parser->changes ) {
-    print "File1: ", $change->filename1;
-    print "Line1: ", $change->line1;
-    print "File2: ", $change->filename2;
-    print "Line2: ", $change->line2;
-    print "Type: ", $change->type;
+    say "File1: ", $change->filename1;
+    say "Line1: ", $change->line1;
+    say "File2: ", $change->filename2;
+    say "Line2: ", $change->line2;
+    say "Type: ", $change->type;
     my $size = $change->size;
     foreach my $line ( 0..($size-1) ) {
-        print "Line: ", $change->text( $line );
+        say "Line: ", $change->text( $line );
     }
 }
