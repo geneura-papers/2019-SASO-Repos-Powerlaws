@@ -1,0 +1,17 @@
+,PL/LogN,PL/Exp,PL/PL_trunc,PL_trunc/LogN
+atom,ND,ND,PL_trunc,ND
+cask,ND,PL,ND,ND
+Dancer2,ND,PL,ND,PL_trunc
+django,LogN,PL,PL_trunc,PL_trunc
+docker,LogN,PL,PL_trunc,PL_trunc
+ejabberd,LogN,PL,PL_trunc,PL_trunc
+fission,LogN,PL,PL_trunc,PL_trunc
+mojo,PL,PL,ND,PL_trunc
+Moose,ND,PL,PL_trunc,PL_trunc
+rakudo,PL,PL,PL_trunc,PL_trunc
+scalatra,LogN,PL,PL_trunc,PL_trunc
+tensorflow,ND,ND,ND,PL_trunc
+tpot,ND,PL,PL_trunc,PL_trunc
+tty,ND,ND,ND,ND
+vue,PL,PL,PL_trunc,PL_trunc
+webpack,LogN,PL,PL_trunc,PL_trunc
