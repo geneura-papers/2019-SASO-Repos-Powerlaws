@@ -109,9 +109,6 @@ code or new paragraphs without an apparent origin.
 
 The anecdotal evidence gathered by the authors confirms this kind of events
 happens in software development teams, mainly in an open source context. 
-% Antonio - Is this properly justified (as an 'anecdotal evidence')? I guess it happens due to the unorganized/unexpected contributions that can appear in open source projects, right?
-% They are not unorganized, and we are not justifying anything, just
-% giving a motivation why people would thing this is worthy of study - JJ
 As a matter of fact, several researchers have
 proved that many projects match the features of a critical state,
 \cite{wu2007empirical,gorshenev2004punctuated,Merelo2016:repomining,gao2014analysis},
@@ -122,8 +119,6 @@ environment. In this case, collaborators interact through the code
 itself and through messages left, like pheromones, in other
 communication media, such as Slack, email or an IRC chat
 application, task assignment systems or mailing lists. 
-% un revisor se queja de esta frase justo anterior. Quizás la vea larga, pero sí tiene sentido  - Pedro
-% Expandida y dividida. - JJ
 These are probably just some of the self-organization processes taking place,
 but the fact is that SOC predicts that the system will reach a
 critical state through self-organization given very few initial
@@ -153,8 +148,6 @@ state. Besides,  we take a new approach to analyzing the repositories,
 different from the usual one that considers daily changes in size for
 the whole repository; instead, we introduce a {\em natural} timeline which uses as a {\em
   tick} the commit itself, and consider either increases or decreases in size, not only increases. 
-% Antonio - as it is usual? as it was previously done?
-% Don't understand what you mean - JJ
 In fact, a refactorization where a number of lines is changed might
 not show up in daily changes because size in lines might not change, 
 while it will have an impact in this one equal to the number of lines changed. 
@@ -166,14 +159,6 @@ process, as long as it is done through an application that allows
 collaboration, for instance, as a repository managed by a source code
 control system such as {\tt git}. In fact, some explanations have been offered via conservation laws \cite{6784340} and other usual complex network
 mechanisms such as preferential attachment \cite{lin2015power}.
-
-% Antonio - It is not clear the motivation, rather than just 'observe' if SOC happens. Please, explain what will be the good news for developers or so if SOC is detected. ;)
-% That is enough motivation. We don't know in advance if it happens or
-% noT - jj
-%% It reminds me about the cathedral vs bazaar discussion 
-%% Add something about it if you want - JJ
-% At any rate, software projects can be considered complex systems and
-% as such we will study them in this paper. 
 
 After some initial exploration of the subject and developing the
 tools needed to mine repositories on GitHub \cite{merelo16:self}, in
@@ -289,26 +274,31 @@ mine their information.
 \section{Methodology}
 \label{sec:method}
 
-We have chosen 16 repositories in different states of development, and representing from
-web frameworks such as Django to Atom plugins in the case of {\em
-  language-perl6e}. The projects they host are written in many different languages, either
-interpreted or compiled, and vary also in {\em professionalism}, from
-a recently started Atom editor plugin for Perl6 to Docker, an open
-platform for building and running distributed applications,  
-created and maintained by a fully professional community. 
+We have chosen 16 repositories in different states of development,
+which represent a wide array of languages and functionalities, from
+web frameworks such as Django to Atom plugins, through one-of-a-kind
+frameworks such as Docker. Normally a project includes several
+different languages, and these languages are either
+interpreted or compiled, either to machine code or to
+bytecode. Repositories vary also in {\em professionalism}, from
+a small Atom editor plugin for Perl6 to Docker, an open
+platform for building and running isolated applications,
+created and maintained by a fully professional community.
 
 Repository mining was done during the months of January to March
-2017, although the particular time of collection should not have an
-influence on the results, as long as they have a minimum amount of
-commits. 
+2017, with the second sweep of the same repositories performed in
+February 2019.
 
-The way we look at changes in the repository is novel and was used for
+The way we look at changes in the repository was initially proposed by
+the authors and was used for
 the first time in the previous technical reports
 \cite{Merelo2016:repomining}. When looking to find SOC in repositories
 you have to look at the timeline of changes in those
 repositories. In most papers so far, this timeline was {\em natural},
 using days or weeks, and the change used was the increase in size
 after every daily work. 
+
+% We need to rewrite all of this.
 
 We will introduce several changes to this usual methodology. The first one
 is the timeline: we will use a discrete timeline formed by the
