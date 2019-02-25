@@ -374,8 +374,40 @@ happening in a day followed by a flurry of changes will appear as a big change
 if the time unit is bigger than the discrete commit. 
 
 Once the information from the repositories has been extracted, we
-proceed to analyze it in the next section. 
+proceed to analyze it in order to find clues about SOC behaviour. 
 
+With that particular objetive in mind, we change the methodology used
+in \cite{merelo2017self} for several reasons.
+
+First of all, it is unrealist to think that a powerlaw distribution will
+fit all our data. Then, our first step is to check what portion of the data
+could be fitted with a powerlaw, or in other words, what is the minimal value 
+(if there is one) from which the scaling relationship of the powerlaw begins.
+This is a fair assumption since we are working with heavy-tailed distributions 
+and our main interest is the behaviour of the tail of our data.
+
+Moreover, as it is shown in papers like \cite{newman2005power, clauset2009power},
+least square method is a poor way to proceed when estimatingour fitted powerlaw's
+parameters. Instead, we are going to use a direct method describe in
+\cite{clauset2009power} and impletmented in \cite{alstott2014powerlaw}.
+
+Up to this point we have revisited our way of analyze powerlaw fitting and
+the estimation of our parameters. However, there is a more deep question unanswered:
+does our data really follow (in a statiscally relevant way) a powerlaw?
+This kind of tests were lacking in \cite{merelo2017self} and they are relevant
+since they usually offer an unbiased look of the data. 
+
+Taking into account that our main question is wether a powerlaw is the best
+description of our data, we choose to apply a comparative test that could 
+evaluate if there are any alternative distribution that could have generated
+our data with greater likelihood than a powerlaw. That is the main reason why
+we choose to use a loglikehood ratio test implemented in \cite{alstott2014powerlaw}.
+
+Finally, we offer a graphical view of these result different from \cite{merelo2017self}.
+We are going to use the probability density function (PDF) for plotting. Due to the 
+requirement of binning the data to this type of graphic, we are going to use a
+logarithmic spacing, since it reduces the statistical errors in the tail in log-log 
+plots at it is stated in \cite{newman2005power}.
 
 % --------------------------------------------------------
 
