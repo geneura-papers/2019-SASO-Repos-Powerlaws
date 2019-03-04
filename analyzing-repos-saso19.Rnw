@@ -274,31 +274,58 @@ be better detected using commits. An {\em avalanche} caused by a small change
 happening in a day followed by a flurry of changes will appear as a big change 
 if the time unit is bigger than the discrete commit. 
 
+
+
+%%%%%%%%% 
+
 Once the information from the repositories has been extracted, we
-proceed to analyze it in order to find clues about SOC behaviour. 
+proceed to analyze it in order to find clues about what kind of distribution is generating our data. 
 
 With that particular objetive in mind, we change the methodology used
 in \cite{merelo2017self} for several reasons.
 
-First of all, it is unrealist to think that a powerlaw distribution will
-fit all our data. Then, our first step is to check what portion of the data
-could be fitted with a powerlaw, or in other words, what is the minimal value 
-(if there is one) from which the scaling relationship of the powerlaw begins.
-This is a fair assumption since we are working with heavy-tailed distributions 
-and our main interest is the behaviour of the tail of our data.
+First of all we want to offer a test that checks whether the observed data 
+set actually follows a power-law, instead of only visualize the result. 
+This kind of tests can vary based on differtent measured and techniques. The one we
+are going to use is suggested in \cite{clauset2009power}, which consists in using a
+goodness-of-fit  test via boostrapping procedure. 
 
-Moreover, as it is shown in papers like \cite{newman2005power, clauset2009power},
-least square method is a poor way to proceed when estimatingour fitted powerlaw's
-parameters. Instead, we are going to use a direct method describe in
-\cite{clauset2009power} and impletmented in \cite{alstott2014powerlaw}.
+Due to the use of boostrapping, this procedure is a time and resources consuming one.
+We essentially  generate  multiple  data  sets  with our two main parameters $x_{min}$ 
+and $\alpha$  and  then  we reinferr the model parameters. We perfom this analysis with 
+R package: PoweRlaw. A detailed description of it and the hypothesis tests can be found 
+in \cite{gillespie2015power}.
+
+From our hypothesis test , there are two possible outcomes. 
+If our p-value$<0.1$, then we should search for another model that fit our
+data better than the powerlaw.
+On the other hand, if our p-value $> 0.1$
+we can not rule outthe power law model. Then, we can deeply analyze its parameters and evolution.
+
+As it is unrealist to think that a powerlaw distribution will
+fit all our data, our first step is to check what portion of the data
+could be fitted with a powerlaw, or in other words, what is the minimal value 
+(if there is one) from which the scaling relationship of the powerlaw begins
+\footnote{This is a fair assumption since we are working with heavy-tailed distributions 
+and our main interest is the behaviour of the tail of our data.}. 
+This value is usually noted by $x_{min}$ and is our first parameter.
+
+
+Once we have the fisrt value, we proceed to estimate the scale of our powerlaw.
+As it is shown in papers like \cite{newman2005power, clauset2009power},
+least square method is a poor but widespread way to proceed when estimating the
+scale parameter. Instead, we are going to use a direct method describe in
+\cite{clauset2009power} and impletmented in \cite{alstott2014powerlaw} that use
+the data values we have. This method is known to produce a very nice fit with
+less error than the others mentioned above.
 
 Up to this point we have revisited our way of analyze powerlaw fitting and
 the estimation of our parameters. However, there is a more deep question unanswered:
 does our data really follow (in a statiscally relevant way) a powerlaw?
-This kind of tests were lacking in \cite{merelo2017self} and they are relevant
-since they usually offer an unbiased look of the data. 
+This kind of answers were lacking in \cite{merelo2017self} and they are relevant
+independently our first test's results, since they usually offer an unbiased look of the data . 
 
-Taking into account that our main question is wether a powerlaw is the best
+Taking into account that our main question is wether a powerlaw is the best 
 description of our data, we choose to apply a comparative test that could 
 evaluate if there are any alternative distribution that could have generated
 our data with greater likelihood than a powerlaw. That is the main reason why
