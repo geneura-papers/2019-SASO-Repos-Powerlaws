@@ -82,6 +82,11 @@ for (i in 1:length(summary$file) ) {
 
 \begin{abstract}
 Software development is an example of self-organized systems. Even if there can be team leaders, the growth and evolution of the code in repositories is mainly the result of self-organization.
+
+One of the most searched features of self organization is the existence of a powerlaw. In this paper we present a statistically accurate set of tests that help us to decided how repositories are evolving, and if they are really distributed by a powerlaw. 
+
+% Here we add the findings and conclusions
+
 \end{abstract}
 
 %\keywords{Complex systems, self-organizing systems, self-organized
@@ -91,7 +96,16 @@ Software development is an example of self-organized systems. Even if there can 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   INTRODUCTION   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}\label{introduction}
 
+There are several steps in the study of self-organized systems. One of them is to study the existence of powerlaw's distribution in the data from our system. However, during this process, we can show a distorted version of reality if aren't carefull enough. 
 
+To really understand the behaviour of software development in repositories, we should start  not only trying to fit a powerlaw in our data but making a statistically accurate study to confirm how much evidence we have of this type of behaviour. Not only in a solid point of time, but adding temporal evaluation instead (2017 and 2019 data) .
+
+This goal leads us to study where a possible powerlaw behaviour would start, since a pure, full-range powerlaw distribution is far form usual. Moreover, we should estimate the scale of our distribution and the error we are make in such estimation.
+To end this part, we present an interesting comparative study, where we observe the invariance of scale and global behaviour in time. 
+
+But this study cannot be completed without a proper distribution analysis. In some dataset, the evidence of a powelaw is very weak, and even in the ones that pass our entry test, we cannot afirm blindly that powerlaws are generating them. So,  In order to minimize our preexited bias, we are going to measure the evidence of a powerlaw distribution in front of a series of distributions that could lead to similar results. 
+
+This way, We offer a test to analyze how much evidence there is for or against our assumptions in every step, finally addressing the question: Does software development really follows a powerlaw?
 
 Next, after presenting a brief state of the art, we will explain our
 methodology followed by the results obtained, closing with our
