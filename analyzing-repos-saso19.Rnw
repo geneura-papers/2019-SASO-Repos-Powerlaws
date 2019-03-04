@@ -81,9 +81,15 @@ for (i in 1:length(summary$file) ) {
 \maketitle
 
 \begin{abstract}
-Software development is an example of self-organized systems. Even if there can be team leaders, the growth and evolution of the code in repositories is mainly the result of self-organization.
-
-One of the most searched features of self organization is the existence of a powerlaw. In this paper we present a statistically accurate set of tests that help us to decided how repositories are evolving, and if they are really distributed by a powerlaw. 
+Software development is an example of self-organized systems. Even if
+there can be team leaders, the growth and evolution of the code in
+repositories is mainly the result of self-organization. Self
+organization cannot be deteted directly, but through measurements in
+the system, looking for features such as the existence of a
+powerlaw. In this paper we present a statistically accurate set of
+tests that help us decide how repositories are evolving, and if they
+are really distributed by a powerlaw, indicating the existence of a
+state reached via self-organization.
 
 % Here we add the findings and conclusions
 
@@ -96,16 +102,62 @@ One of the most searched features of self organization is the existence of a pow
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   INTRODUCTION   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}\label{introduction}
 
-There are several steps in the study of self-organized systems. One of them is to study the existence of powerlaw's distribution in the data from our system. However, during this process, we can show a distorted version of reality if aren't carefull enough. 
+There are several steps in the study of self-organized systems. One of
+them is to study the existence of powerlaw's distribution in the data
+from our system. % Add reference. Always add references. - JJ
+However, during this process, we can show a distorted
+version of reality if aren't careful enough. 
 
-To really understand the behaviour of software development in repositories, we should start  not only trying to fit a powerlaw in our data but making a statistically accurate study to confirm how much evidence we have of this type of behaviour. Not only in a solid point of time, but adding temporal evaluation instead (2017 and 2019 data) .
+To really understand the behaviour of software development teams as
+reflected by their activity in repositories, we should start to not
+only try to fit a powerlaw in our data but making a statistically
+accurate study to confirm how much evidence we have of this type of
+behaviour. Since this kind of state need not be steady, we should need
+to analyze it not only in a  point in time, but also taking into
+account the temporal dimension.
+% In general, you shouldn't say what we are about to do. We should say
+% the motivation for doing this kind of thing, and also qualify or
+% reference *any* claim we do. In this case
+% * Why is self-organization in repositories important? What would it imply
+% * Why does this advance the state of the art? Is it because, in this
+% particular case, power laws are not thoroughly investigated?
 
-This goal leads us to study where a possible powerlaw behaviour would start, since a pure, full-range powerlaw distribution is far form usual. Moreover, we should estimate the scale of our distribution and the error we are make in such estimation.
-To end this part, we present an interesting comparative study, where we observe the invariance of scale and global behaviour in time. 
+This goal leads us to study where a possible powerlaw behaviour would
+start, since a pure, full-range powerlaw distribution is far form
+usual. % reference needed - JJ 
+Moreover, we should estimate the scale of our distribution and the
+error we are make in such estimation. % why? - JJ
+To end this part, we present an interesting comparative study, where
+we observe the invariance of scale and global behaviour in time. % Why? - JJ
 
-But this study cannot be completed without a proper distribution analysis. In some dataset, the evidence of a powelaw is very weak, and even in the ones that pass our entry test, we cannot afirm blindly that powerlaws are generating them. So,  In order to minimize our preexited bias, we are going to measure the evidence of a powerlaw distribution in front of a series of distributions that could lead to similar results. 
+But this study cannot be completed without a proper distribution
+analysis. % It's not that it wouldn't be completed. It's that we need
+          % to know which distribution is the most likely, if it's not
+          % a power law. Also, why is it mistaken by a power law. Some
+          % introduction to statistical distribution is not in
+          % order. - JJ
+In some datasets, the evidence of a powelaw is very weak, and
+even in the ones that pass our entry test, we cannot afirm blindly
+that powerlaws are generating them. So,  In order to minimize our
+preexisting bias, we are going to measure the evidence of a powerlaw
+distribution in front of a series of distributions that could lead to
+similar results. % These are conclusions, and do not belong
+                 % here. Questions belong to the introduction. Is
+                 % there evidence of a power law? What are we going to
+                 % do to establish that evidence? How does it prove
+                 % our original hypothesis or not? - JJ
 
-This way, We offer a test to analyze how much evidence there is for or against our assumptions in every step, finally addressing the question: Does software development really follows a powerlaw?
+% Lay out the skeleton of what we are going to do. We will re-measure
+% what we did in our 2017 paper, see if it holds (justify why we use
+% this data). Also say what kind of data we are using, how we obtain
+% it... Introduction should take the first full page, roughly.
+
+
+This way, we offer a test to analyze how much evidence there is for or
+against our assumptions in every step, finally addressing the
+question: Does software development really follows a powerlaw? 
+% This is a small sample of all software development. You will need to
+% justify this choice later on.
 
 Next, after presenting a brief state of the art, we will explain our
 methodology followed by the results obtained, closing with our
