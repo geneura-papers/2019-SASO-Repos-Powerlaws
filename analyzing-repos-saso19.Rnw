@@ -341,19 +341,25 @@ First of all we want to offer a test that checks whether the observed data
 set actually follows a power-law, instead of only visualize the result. 
 This kind of tests can vary based on differtent measured and techniques. The one we
 are going to use is suggested in \cite{clauset2009power}, which consists in using a
-goodness-of-fit  test via boostrapping procedure. 
+goodness-of-fit hypothesis test via boostrapping procedure. 
 
 Due to the use of boostrapping, this procedure is a time and resources consuming one.
 We essentially  generate  multiple  data  sets  with our two main parameters $x_{min}$ 
-and $\alpha$  and  then  we reinferr the model parameters. We perfom this analysis with 
-R package: PoweRlaw. A detailed description of it and the hypothesis tests can be found 
-in \cite{gillespie2015power}.
+and $\alpha$  and  then  we reinferr the model parameters. The outcome of the algorithm 
+will result in a P-value, which, if is large enough, tell us that the difference
+between our data and the powerlaw model we have generated is small and mostly attributed
+to statisticall randomness. On the other hand, if P-value is close to 0, it is quite unlikely
+that our model fits the data properly.
+Following \cite{clauset2009power} we choose our treshold value in $p=0.01$, in addition
+we are going to perfom this analysis with R package: PoweRlaw. A detailed description
+of it and the hypothesis tests can be found in \cite{gillespie2015power}.
 
-From our hypothesis test , there are two possible outcomes. 
-If our p-value$<0.1$, then we should search for another model that fit our
-data better than the powerlaw.
-On the other hand, if our p-value $> 0.1$
-we can not rule outthe power law model. Then, we can deeply analyze its parameters and evolution.
+Up to this point, we have ruled out what datasets are unlikely to be fitted by a powerlaw
+in any of its distribution. Notice, on the contrary case, that we are only assuming that
+we can not discard that a powerlaw is generating the data.
+However, as there is some probability of the appearance of this distribution in our data
+we can study and analyze how its two main parameters may evolve between 2017 and 2019.
+
 
 As it is unrealist to think that a powerlaw distribution will
 fit all our data, our first step is to check what portion of the data
@@ -366,7 +372,7 @@ This value is usually noted by $x_{min}$ and is our first parameter.
 
 Once we have the fisrt value, we proceed to estimate the scale of our powerlaw.
 As it is shown in papers like \cite{newman2005power, clauset2009power},
-least square method is a poor but widespread way to proceed when estimating the
+least square method is a poor but widespreaded way to proceed when estimating the
 scale parameter. Instead, we are going to use a direct method describe in
 \cite{clauset2009power} and impletmented in \cite{alstott2014powerlaw} that use
 the data values we have. This method is known to produce a very nice fit with
@@ -383,6 +389,12 @@ description of our data, we choose to apply a comparative test that could
 evaluate if there are any alternative distribution that could have generated
 our data with greater likelihood than a powerlaw. That is the main reason why
 we choose to use a loglikehood ratio test implemented in \cite{alstott2014powerlaw}.
+There are two algorithm's outcomes. First we have the loglikelihood ratio between the 
+two  candidate  distributions. The sign of this quantity will point out which
+distribution is more likely to be producing out data. After it, we calculate the signification 
+of this ratio, a P-value. Following \cite{alstott2014powerlaw} indications we establish our P-value treshold at $p=0.05$;
+above that point the loglikehood ratio has no significance and we can not decide which distribution
+is better fitting out data.
 
 Finally, we offer a graphical view of these result different from \cite{merelo2017self}.
 We are going to use the probability density function (PDF) for plotting. Due to the 
