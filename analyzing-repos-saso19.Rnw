@@ -498,16 +498,8 @@ for (i in 1:length(lines) ) {
 \caption{Zipf, that is, ranked change sizes with logarithmic $y$ axis for the 16 repositories analyzed.\label{fig:zipf}}
 \end{figure*}
 
+% Can we maybe show all repos in the past and now? Would that be useful?
 
-\begin{table}[h!tb]
-    \centering
-<<zipf, cache=FALSE,echo=FALSE>>=
-kable( zipf.fit.df,"latex" )
-@
-\vspace*{2mm}
-\caption{Summary of Zipf coefficients of the linear models.\label{t:zipf}}
-\end{table}
-%
 
 
 % --------------------------------------------------------
