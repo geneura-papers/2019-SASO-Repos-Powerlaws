@@ -81,15 +81,21 @@ for (i in 1:length(summary$file) ) {
 \maketitle
 
 \begin{abstract}
-Software development is an example of self-organized systems. Even if
-there can be team leaders, the growth and evolution of the code in
-repositories is mainly the result of self-organization. Self
-organization cannot be deteted directly, but through measurements in
-the system, looking for features such as the existence of a
-powerlaw. In this paper we present a statistically accurate set of
-tests that help us decide how repositories are evolving, and if they
-are really distributed by a powerlaw, indicating the existence of a
-state reached via self-organization.
+Software development as done using modern methodologies and source
+control systems has been often established as an example of
+self-organization, with code growing and evolving mainly through activities that do not stem from centralized power, leader or directives. Although there is anecdotal evidene for this,  self organization
+cannot be detected through direct observation, but through measurements on the system,
+looking for features such as the existence of powerlaws over some
+features (such as changes) and sizes. Although published and proposed in many papers as such, power laws are more elusive than they might seem at first sight, so in this paper we present a statistically accurate
+set of tests that help us decide, from the way repositories are
+changing, if they are really distributed by a powerlaw, indicating the
+existence of a state reached via self-organization.
+
+% Not clear what's the gist of this abstract. You can read it as 
+% * We _know_ that code repositories self-organize
+% * But we don't know how to detect self organization
+% * 
+
 
 % Here we add the findings and conclusions
 
@@ -102,7 +108,7 @@ state reached via self-organization.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   INTRODUCTION   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}\label{introduction}
 
-There are several steps in the study of self-organized systems  \citep{bak1988self}. One of
+There are several steps in the study of self-organized systems  \cite{bak1988self}. One of
 them is to study the existence of powerlaw's distribution in the data
 from our system. This property is intrinsic related to the scale-free behaviour
 these systems exhibit, that is, there is no single characteristic event size \cite{golyk20self}.
