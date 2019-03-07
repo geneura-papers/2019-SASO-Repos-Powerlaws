@@ -81,6 +81,8 @@ for (i in 1:length(summary$file) ) {
 \maketitle
 
 \begin{abstract}
+  
+  % Does self-organization imply power laws? Or a critical state? Self organization will take place even if a critical state has not been reached yet, right? - JJ
 Software development as done using modern methodologies and source
 control systems has been often established as an example of
 self-organization, with code growing and evolving mainly through activities that do not stem from centralized power, leader or directives. Although there is anecdotal evidene for this,  self organization
@@ -109,14 +111,13 @@ existence of a state reached via self-organization.
 \section{Introduction}\label{introduction}
 
 There are several steps in the study of self-organized systems  \cite{bak1988self}. One of
-them is to study the existence of powerlaw's distribution in the data
-from our system. This property is intrinsic related to the scale-free behaviour
+them is to study the existence of a power-law's distribution in the data
+from our system. This property is intrinsically related to the scale-free behaviour
 these systems exhibit, that is, there is no single characteristic event size \cite{golyk20self}.
-% Add reference. Always add references. - JJ
-Understanding what distribution is producing our data give us an insight about 
-how confidently we are about confirm that our system is a Self-organized one.
+Understanding what distribution is producing our data gives us insights about 
+how confidently we are about claiming that our system is a self-organized one.
 However, during this process, we can show a distorted
-version of reality if aren't careful enough. 
+version of reality if aren't careful enough. % Clarify what you mean by "A distorted version of reality", saying clearly what you want: revisit claims for the existence of power laws, showing that in most cases they only seem a power law. - JJ
 
 % * Why is self-organization in repositories important? What would it imply -JJ
 % I 'm not sure about how to "attack" this question. - Bart
@@ -510,6 +511,9 @@ kable( zipf.fit.df,"latex" )
 
 \section{Conclusions}\label{conc}
 
+
+% Several things we can do in the conclusions
+% * So, most repositories are _not_ actually self-organized because they do not follow a power law? Answer: We can't affirm that. Power laws only manifest themselves in critical states; self-organization will still take place. 
 
 \bibliographystyle{apalike}
 \bibliography{geneura,biblio}
