@@ -1,0 +1,17 @@
+,PL KS test,PL/LogN,PL/Exp,PL/PL_trunc,PL_trunc/LogN
+atom,0.108,ND,ND,PL_trunc,ND
+cask,0.276,ND,PL,ND,ND
+Dancer2,0.426,ND,PL,ND,ND
+django,0.862,LogN,PL,PL_trunc,PL_trunc
+docker,0.118,LogN,PL,PL_trunc,LogN
+ejabberd,0,LogN,PL,PL_trunc,PL_trunc
+fission,0,ND,PL,PL_trunc,PL_trunc
+mojo,0.88,PL,PL,ND,PL_trunc
+Moose,0.224,PL,PL,PL_trunc,PL_trunc
+rakudo,0,PL,PL,PL_trunc,PL_trunc
+scalatra,0,LogN,PL,PL_trunc,PL_trunc
+tensorflow,0.418,LogN,PL,PL_trunc,PL_trunc
+tpot,0.184,LogN,PL,PL_trunc,PL_trunc
+tty,0.47,ND,ND,ND,ND
+vue,0,PL,PL,PL_trunc,PL_trunc
+webpack,0.002,LogN,PL,PL_trunc,PL_trunc
