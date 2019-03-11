@@ -13,7 +13,7 @@
 \title{Power laws in code repositories: A skeptical approach
   \thanks{ This paper has been supported in part by
     project DeepBio (TIN2017-85727-C4-2-P)}
-}
+} % Good title! 
 
 \author{\IEEEauthorblockN{B. Ortiz}
   \IEEEauthorblockA{Geneura Team, ETSIIT and CITIC, University of Granada (Spain)\\
@@ -76,6 +76,7 @@ for (i in 1:length(summary$file) ) {
     lines[[i]]$SMA10 <- SMA(lines[[i]]$Lines.changed,n=10)
     lines[[i]]$SMA20 <- SMA(lines[[i]]$Lines.changed,n=20)
 }
+# Are we actually using all this? - JJ
 @ 
 
 \maketitle
@@ -85,15 +86,18 @@ for (i in 1:length(summary$file) ) {
   % Does self-organization imply power laws? Or a critical state? Self organization will take place even if a critical state has not been reached yet, right? - JJ
 Software development as done using modern methodologies and source
 control systems has been often established as an example of
-self-organization, with code growing and evolving mainly through activities that do not stem from centralized power, leader or directives.
-The main difficulty of these studies is that self organization
-cannot be detected through direct observation, but through measurements on the system,
-looking for features such as the existence of powerlaws over some
-features (such as changes) and sizes.
-Although published and proposed in many papers as such, power laws are more elusive than they might seem at first sight, so in this paper we present a statistically accurate
-set of tests that help us decide, from the way repositories are
-changing, if they are really distributed by a powerlaw, which could indicate us the
-existence of a state reached via self-organization.
+self-organization, with code growing and evolving organically, through
+activities that do not stem from centralized power, leader or
+directives.  The main difficulty of these studies is that self
+organization cannot be detected through direct observation, but
+through measurements on the system, looking for features such as the
+existence of powerlaws over some features (such as changes) and sizes.
+Although published and proposed in many papers as such, power laws are
+more elusive than they might seem at first sight, so in this paper we
+present a statistically accurate set of tests that help us decide,
+from the way repositories are changing, if they are really distributed
+by a powerlaw, which could indicate us the existence of a state
+reached via self-organization.
 
 We revisit one of the most representative papers of these observations to reevaluate its results and compare them
 with the current status of the repositories analyzed in it.
