@@ -433,7 +433,7 @@ webpack &66.0 &1.7525127838915868 &0.030568742256899546\\
 \end{table}
 
 
-\begin{table}[htbp]
+\begin{table*}[htbp]
 	\caption{2019 Parameters with powerlaw fitting}
 	\begin{center}
 		\begin{tabular}{| p{0.12\linewidth} | p{0.1\linewidth} | p{0.3\linewidth} | p{0.3\linewidth} |}
@@ -459,10 +459,10 @@ webpack &50.0  &1.481958114820392  &0.00906295021690492 \\
 			\hline
 		\end{tabular}
 	\end{center}
-\end{table}
+\end{table*}
 
 
-\begin{table}[htbp]
+\begin{table*}[htbp]
 	\caption{2017 summary results}
 \begin{center}
 	\begin{tabular}{| p{0.12\linewidth} | p{0.08\linewidth} | p{0.08\linewidth} | p{0.06\linewidth} | p{0.1\linewidth} |p{0.13\linewidth} | p{0.5\linewidth} |}
@@ -488,11 +488,11 @@ webpack &50.0  &1.481958114820392  &0.00906295021690492 \\
 		\hline
 	\end{tabular}
 \end{center}
-\end{table}
+\end{table*}
 
 % Can we maybe show all repos in the past and now? Would that be useful?
 
-\begin{table}[htbp]
+\begin{table*}[htbp]
 	\caption{2019 summary results}
 	\begin{center}
 		\begin{tabular}{| p{0.12\linewidth} | p{0.08\linewidth} | p{0.08\linewidth} | p{0.08\linewidth} | p{0.1\linewidth} |p{0.13\linewidth} | p{0.09\linewidth} |}
@@ -518,23 +518,23 @@ webpack &50.0  &1.481958114820392  &0.00906295021690492 \\
 			\hline
 		\end{tabular}
 	\end{center}
-\end{table}
+\end{table*}
 
 % following pictores take too long to compile everytime we create the pdf, so I
 % create them out of the document.
-\begin{figure}[htbp]
-	\centerline{\includegraphics[width=0.5\textwidth]{plots/mojo-2017.eps}}
+\begin{figure*}[htbp]
+	\centerline{\includegraphics[width=0.95\textwidth]{plots/mojo-2017.eps}}
 	\caption{PDF plot of a repository with \textit{Moderate} rank: Mojo from 2017.}
 	\label{mojo}
-\end{figure}
+\end{figure*}
 
 
 
-\begin{figure}[htbp]
-	\centerline{\includegraphics[width=0.5\textwidth]{plots/docker.eps}}
+\begin{figure*}[htbp]
+	\centerline{\includegraphics[width=0.95\textwidth]{plots/docker.eps}}
 	\caption{PDF plot of a repository with \textit{None} rank: Docker from 2017.}
 	\label{docker}
-\end{figure}
+\end{figure*}
 
 
 % --------------------------------------------------------
