@@ -197,6 +197,27 @@ closing with our conclusions.
 
 \section{State of the art}\label{soa}
 
+The study of code repositories from the point of view of self-organized criticality has not followed a continuous line of investigation.
+
+On the one hand, we find that self-organized criticality has been
+Description of a wide variety of code repositories with a certain probability. These studies can be found in\cite{wu2007empirical,gorshenev2004punctuated}, but they are not the only ones of this kind. Tests on the possible self-organized criticality have also been sought in another type of repositories and projects, which are enumerable in size and purpose \cite{Merelo2016:repomining,merelo16:slash,merelo16:self,merelo2017self}.
+
+In most of these studies, however, the evidences in favor of the existence of a power law are not accompanied by a significant statistical study. It is usual, as described in \cite{newman2005power} that the evidence leading to a suggestion of a power law in the distribution is visual. Once we have these tests, the study goes through the adjustment of a possible powerlaw \cite{merelo2017self,arafat2009commit}.
+
+The general trend being the lack of statistical evidence that supports the hypothesis of the existence of a power law, the truth is that as described in \cite{newman2005power, clauset2009power} the most common method for making subsequent adjustments, Leas Square Medium \cite{merelo2017self,arafat2009commit,merelo16:self}, usually implies the existence of a greater error than the possible alternatives.
+
+Currently, the general trend that started with the description of the power laws in self-organized systems has been slowed down. Instead, due to the existence of more objective evaluation methods, the results that were assumed until now are being re-evaluated.
+
+Examples of this trend are papers such as \cite{Holme2019, Broido2019}, where the power laws in the networks and in the results will be reevaluated.
+
+\cite{Jones2003}
+\cite{voitalov2018scale}
+\cite{Stumpf665}
+
+\cite{merelo2017self,arafat2009commit,merelo16:self}
+
+% below it is the soa of the previous paper
+
 As far as we know, there has not been a continuing line of research on
 self-organized criticality in software projects or, for that matter,
 any other kind of collaborative work teams. The main reason might be
