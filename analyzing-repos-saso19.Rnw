@@ -10,7 +10,7 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Power laws in code repositories revisited
+\title{Power laws in code repositories: A skeptical approach
   \thanks{ This paper has been supported in part by
     project DeepBio (TIN2017-85727-C4-2-P)}
 }
@@ -85,13 +85,18 @@ for (i in 1:length(summary$file) ) {
   % Does self-organization imply power laws? Or a critical state? Self organization will take place even if a critical state has not been reached yet, right? - JJ
 Software development as done using modern methodologies and source
 control systems has been often established as an example of
-self-organization, with code growing and evolving mainly through activities that do not stem from centralized power, leader or directives. Although there is anecdotal evidene for this,  self organization
+self-organization, with code growing and evolving mainly through activities that do not stem from centralized power, leader or directives.
+The main difficulty of these studies is that self organization
 cannot be detected through direct observation, but through measurements on the system,
 looking for features such as the existence of powerlaws over some
-features (such as changes) and sizes. Although published and proposed in many papers as such, power laws are more elusive than they might seem at first sight, so in this paper we present a statistically accurate
+features (such as changes) and sizes.
+Although published and proposed in many papers as such, power laws are more elusive than they might seem at first sight, so in this paper we present a statistically accurate
 set of tests that help us decide, from the way repositories are
-changing, if they are really distributed by a powerlaw, indicating the
+changing, if they are really distributed by a powerlaw, which could indicate us the
 existence of a state reached via self-organization.
+
+We revisit one of the most representative papers of these observations to reevaluate its results and compare them
+with the current status of the repositories analyzed in it.
 
 % Not clear what's the gist of this abstract. You can read it as 
 % * We _know_ that code repositories self-organize
@@ -108,7 +113,7 @@ existence of a state reached via self-organization.
 \end{abstract}
 
 %\keywords{Complex systems, self-organizing systems, self-organized
-%  criticality, power laws, artificial life}
+%  criticality, power laws, artificial life,software development,software repositories}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   INTRODUCTION   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -117,11 +122,19 @@ existence of a state reached via self-organization.
 There are several steps in the study of self-organized systems  \cite{bak1988self}. One of
 them is to study the existence of a power-law's distribution in the data
 from our system. This property is intrinsically related to the scale-free behaviour
-these systems exhibit, that is, there is no single characteristic event size \cite{golyk20self}.
-Understanding what distribution is producing our data gives us insights about 
-how confidently we are about claiming that our system is a self-organized one.
-However, during this process, we can show a distorted
-version of reality if aren't careful enough. % Clarify what you mean by "A distorted version of reality", saying clearly what you want: revisit claims for the existence of power laws, showing that in most cases they only seem a power law. - JJ
+these systems exhibit, that is, systems where there is no single characteristic event size \cite{golyk20self}.
+Understanding what distribution is producing our data gives us insights of
+how confidently we are about claiming that our system is in a critical state, since this states
+are usually correlated with the appearance of a power law \cite{newman2005power}. % cite needed -bart
+
+Moreover, it is interesting to see if there is some kind of evolution in data. 
+A change in the distribution that explain the data could be originated by a 
+phase change, and phase change happend by passing a critical state. 
+
+However, during this process, we have to justify every conclusion we get, not only 
+by fitting our data, but by giving a proper statistical measure of the probability 
+of our conclusions, that is, following an standarize mathematical method based on
+hypothesis testing.% Clarify what you mean by "A distorted version of reality", saying clearly what you want: revisit claims for the existence of power laws, showing that in most cases they only seem a power law. - JJ
 
 % * Why is self-organization in repositories important? What would it imply -JJ
 % I 'm not sure about how to "attack" this question. - Bart
@@ -133,7 +146,7 @@ offer the possibility of interact with the code making changes, adding and delet
 lines. 
 All these interactions are reflected in an archive by what we call commits. From it
 we can obtain the data about how this code has been changed. 
-	
+
 But to really start to understand the behaviour of software development teams as
 reflected by their activity in repositories, we should not
 only try to fit a powerlaw in our data but making a statistically
@@ -156,24 +169,28 @@ the evidences of powerlaws behaviour in a variety of repositories.
 
 Moreover, we are not going to evaluate just our evidences about the existence of a power law,
 we are going to offer a short range of distributions that can generate similar results and could
-easily be confounded by a powerlaw. This is an standard way to discover if our data is more likely to be produced by other heavy-tailed distribution \cite{clauset2009power}, like the logNormal or the truncated powerlaw. 
+easily be confounded by a powerlaw. This is an standard way to discover if our data is more likely
+to be produced by other heavy-tailed distribution \cite{clauset2009power}, like the logNormal
+or the truncated powerlaw. 
 
-Finally, since we are able to access to multiple years' data, we also interested in study the temporal evolution of the two previous analysis. Here our main objetive is to show how these measure could 
-have changed (if they have at all). We should remember that repositories are evolving system by definition, so they can experiment qualitative changes in his events distribution. Furthermore, even 
+Finally, since we are able to access to multiple years' data, we also interested in study the
+temporal evolution of the two previous analysis. Here our main objetive is to show how these measure could 
+have changed (if they have at all). We should remember that repositories are evolving system
+by definition, so they can experiment qualitative changes in his events distribution. Furthermore, even 
 if they preserve their behaviour, they can still change some distribution's parameters.
 To locate and analyze this changes could be translated in a deeper knowledge in the evolution 
-of these system, specially in the presence of phase changes \cite{merelo2017self} or self-organized critically (understood as a mechanism by which the system is regulating himself to stay in those parameters \cite{newman2005power}).
+of these system, specially in the presence of phase changes \cite{merelo2017self} or self-organized
+critically (understood as a mechanism by which the system is regulating himself to stay in those 
+parameters \cite{newman2005power}).
 
 
 This way, we offer a test to analyze how much evidence there is for or
 against our assumptions in every step, and a set of comparatives to identify some relevant temporal
-changes, establishing a statiscally correct starting point to answer the question: Does software development really follows a powerlaw? 
-% This is a small sample of all software development. You will need to
-% justify this choice later on.
+changes, establishing a statiscally correct starting point to answer the question: Does software
+development really follows a powerlaw? 
 
-Next, after presenting a brief state of the art, we will explain our
-methodology followed by the results obtained, closing with our
-conclusions. 
+Next, we will explain our methodology followed by the results obtained,
+closing with our conclusions. 
 
 % --------------------------------------------------------
 
@@ -249,6 +266,7 @@ mine their information.
 \section{Methodology}
 \label{sec:method}
 
+\subsection{Data extraction}
 We have chosen 16 repositories in different states of development,
 which represent a wide array of languages and functionalities, from
 web frameworks such as Django to Atom plugins, through one-of-a-kind
@@ -264,83 +282,22 @@ Repository mining was done during the months of January to March
 2017, with the second sweep of the same repositories performed in
 February 2019.
 
-The way we look at changes in the repository was initially proposed by
-the authors and was used for
-the first time in the previous technical reports
-\cite{Merelo2016:repomining}. When looking to find SOC in repositories
-you have to look at the timeline of changes in those
-repositories. In most papers so far, this timeline was {\em natural},
-using days or weeks, and the change used was the increase in size
-after every daily work. 
+The way we look at changes in the repository was initially proposed by \cite{Merelo2016:repomining} and was also used in
+\cite{merelo2017self}, where a deeper explanation can be found.
 
 % We need to rewrite all of this.
+This procedure is based on three main concepts:
+\begin{itemize}
+	\item The usage of a discrete timeline formed by the
+	commits, with every commit counting as time=1. 
+	\item Work with selected files in the repository, excluding 
+	those related to images or style
+	\item We take the largest value from the inserted and deleted lines of code.
+\end{itemize}
 
-We will introduce several changes to this usual methodology. The first one
-is the timeline: we will use a discrete timeline formed by the
-commits, with every commit counting as time=1. 
+Up to this point, there is nothing new. But is the way that we evaluate our results that differs from previous analysis.
 
-The second one is that we will work with the size of changes to a particular
-set of files in the repository, selected via wildcards; we exclude other 
-artifacts such as images or style files. To extract information
-about changes to these files in the repositories, we analyze the
-repository log using a Perl script to extract the size of the changes
-that have been made to the considered files. This discards many
-commits from the initial set, leaving some repositories with less than
-100 from the initial number. The actual number of commits modifying
-code might vary from repository to repository; however this ratio is
-not considered important as long as the remaining number of commits is
-enough. 
-
-The third methodological change introduced in this paper is referred
-to code deltas. Since changes in commit logs include both the insertion and deletion of lines in
-committed files, the largest of these values is taken; in particular,
-this means that the addition of all changes will not be equal to the
-sum of 
-the sizes of all files. A change in two lines will appear in a diff 
-as
-``2 insertions, 2 deletions'', adding up to 0; that is why we consider
-the largest of these two values; the main reason for doing so is also
-that in fact, the algorithm that computes changes in the repository
-examines similitude in lines and counts changes in two lines as two
-insertions and two deletions. There is no way to find out whether
-there have been actually two lines added somewhere and two deleted
-somewhere else, so in absence of that, we opt for the heuristic of
-using the largest of these two values as change size. This analysis
-method is more precise that the one used by other authors, 
-which takes
-into account only changes in size in the whole repository, and thus does
-not include activities such as refactoring that consist mainly in
-making changes in place. It also has the granularity of single commits
-and not days or weeks, which are not as problem-specific as using the
-number of commits.
-
-We extract this information via a Perl script, that generates a {\tt
-  .csv} file with a single column with the sequence of changes in size in the files of interest in each
-repository. These data files, as well as the repositories where they have
-been measured, are available with a free license in the repository
-that also hosts this paper\footnote{\url{http://github.com/JJ/literaturame}}. 
-
-Please remember that the $x$ axis for these sequences of changes,
-shown smoothed in Figure \ref{fig:smoothie}, does not correspond to physical time,
-but simply to the commit number, and then only in changes of the
-{\em interesting}, that is, code files. In this sense, there is an important difference between
-our research methodology, which considers atomic changes, to papers such
-as \cite{herraiz2009statistical}, which take into account {\em daily}
-changes. We think that examining discrete changes does not impose a
-particular rhythm, namely, daily, on the changes, but lets the
-repository expose its own rhythm; it also allows us to examine
-slow-changing repositories such as what is usual in non-critical open
-source projects, that can be static for
-a long time to experience a burst of changes all of a sudden;
-precisely these changes can indicate an {\em avalanche} that is a
-symptom of the underlying self-organized criticality state and might
-be better detected using commits. An {\em avalanche} caused by a small change 
-happening in a day followed by a flurry of changes will appear as a big change 
-if the time unit is bigger than the discrete commit. 
-
-
-
-%%%%%%%%% 
+\subsection{Hypothesis tests}
 
 Once the information from the repositories has been extracted, we
 proceed to analyze it in order to find clues about what kind of distribution is generating our data. 
@@ -365,21 +322,19 @@ Following \cite{clauset2009power} we choose our treshold value in $p=0.01$, in a
 we are going to perfom this analysis with R package: PoweRlaw. A detailed description
 of it and the hypothesis tests can be found in \cite{gillespie2015power}.
 
-Up to this point, we have ruled out what datasets are unlikely to be fitted by a powerlaw
-in any of its distribution. Notice, on the contrary case, that we are only assuming that
+Up to this point, we have detected what datasets are unlikely to be fitted by a powerlaw
+in any of its range. Notice, on the contrary case, that we are only assuming that
 we can not discard that a powerlaw is generating the data.
 However, as there is some probability of the appearance of this distribution in our data
 we can study and analyze how its two main parameters may evolve between 2017 and 2019.
-
 
 As it is unrealist to think that a powerlaw distribution will
 fit all our data, our first step is to check what portion of the data
 could be fitted with a powerlaw, or in other words, what is the minimal value 
 (if there is one) from which the scaling relationship of the powerlaw begins
 \footnote{This is a fair assumption since we are working with heavy-tailed distributions 
-and our main interest is the behaviour of the tail of our data.}. 
+	and our main interest is the behaviour of the tail of our data.}. 
 This value is usually noted by $x_{min}$ and is our first parameter.
-
 
 Once we have the fisrt value, we proceed to estimate the scale of our powerlaw.
 As it is shown in papers like \cite{newman2005power, clauset2009power},
@@ -407,11 +362,28 @@ of this ratio, a P-value. Following \cite{alstott2014powerlaw} indications we es
 above that point the loglikehood ratio has no significance and we can not decide which distribution
 is better fitting out data.
 
-Finally, we offer a graphical view of these result different from \cite{merelo2017self}.
-We are going to use the probability density function (PDF) for plotting. Due to the 
+\subsection{Classification}
+
+With all this information we are able to offer a precise conclusion about the 
+probability that powerlaw is generating our data. To sum up all the tests in a single 
+statement we use the scale proposed in \cite{clauset2009power}, which is described as:
+\begin{itemize}
+	\item \textbf{None}: Dataset is probably not distributed by a power law (first test failed).   
+	\item \textbf{Moderate}: Power law is a posible fit but there are other plausible distributions that fit the data.
+	\item \textbf{Good}: Power law is a posible fit and none of the other distributions is plausible.
+	\item \textbf{Truncated}: when truncated power law is clearly favored over a simple power law
+\end{itemize}
+
+
+\subsection{Visualization}
+ 
+On the visual aspects, an aclaration should be made. Here we offer a graphical view that differs from \cite{merelo2017self}
+but not a novel one. It has been used in \cite{arafat2009commit} with similar purposes. 
+Briefly, we are going to use the probability density function (PDF) for plotting. Due to the 
 requirement of binning the data to this type of graphic, we are going to use a
 logarithmic spacing, since it reduces the statistical errors in the tail in log-log 
 plots at it is stated in \cite{newman2005power}.
+
 
 % --------------------------------------------------------
 
@@ -419,87 +391,150 @@ plots at it is stated in \cite{newman2005power}.
 \section{Results}
 \label{res}
 %
-\begin{table*}[h!tb]
-    \centering
-<<commits, cache=FALSE,echo=FALSE>>=
-kable.summary <- summary # Row names are useful
-row.names(kable.summary) <- NULL
-kable.summary$file <- NULL
-kable( kable.summary,"latex",digits=2 )
-@
-\vspace*{1mm}
-\caption{Summary of statistical measures for the software repositories
- we have analyzed here. {\tt Name} is the name of the repository in
- Github, {\tt age} is the total number of commits that affect the
- files under study, next is the main language the project uses, {\tt
-   Mean} and {\tt Median} are computed over change sizes in number of
- lines, with {\tt SD} = standard deviation from the mean.\label{t:stat}}
-\end{table*}
-%
-A summary of the statistical characteristics of the size of the commits,
-in number of lines, is shown in Table \ref{t:stat}.
+In this section we will briefly describe the results obtained.
+First, analyzing the parameters of the possible power law distribution, we find that in those repositories with low variation of the $x_{min}$ parameter there is a lack of correlation between the changes in the estimated starting point from which the distribution of power law starts and the scale parameter, $\alpha$.
 
+However, as can be seen in tables I and II, repositories such as tensorflow or django, which have a strong variation in the initial point, also have a greater variation in the scale parameter.
 
-\begin{figure*}[h!tb]
-  \centering
-<<linecount,message=FALSE, fig.subcap=summary$Name, echo=FALSE,warning=FALSE,fig.height=4,out.width='.245\\linewidth'>>=
-sizes.fit.df <- data.frame(Name = character(),
-                           Coefficient = double(),
-                           Intercept = double())
-for (i in 1:length(lines) ) {
-    by.lines <- group_by(lines[[i]],Lines.changed)
-    lines.count <- summarize(by.lines, count=n())
-    sizes.fit <- lm(log(1+lines.count$Lines.changed) ~ log(lines.count$count))
-    repo <- strsplit(paste(summary[[1]][i],""),"_",fixed=T)
-    sizes.fit.df <- rbind( sizes.fit.df,
-                          data.frame( Name = repo[[1]][1],
-                                     Intercept = summary(sizes.fit)$coefficients[1],
-                                     Coefficient = summary(sizes.fit)$coefficients[2] ))
-    print(ggplot(lines.count, aes(x=Lines.changed, y=count))+geom_point()+scale_x_log10()+scale_y_log10()+stat_smooth() + theme(legend.position="none",axis.title.x=element_blank(),axis.title.y=element_blank()) + ggtitle(lines[[i]]$url))
-}
-@ 
-\caption{Number of changes of that size vs. lines changed in a log-log scale. The
-  blue line and gray zone is a smoothed version of the chart. \label{fig:changes}}
-\end{figure*}
+As for the errors committed, calculated in the $\sigma$ column, they all remain relatively low, which assures the previous calculations.
 
-These distributions can, in fact, be linearly fit to a log-log distribution with coefficients
-shown in Table \ref{t:sizes}. 
-%
-\begin{table}[h!]
-    \centering
-<<sizes, cache=FALSE,echo=FALSE>>=
-kable( sizes.fit.df,"latex" )
-@
-\vspace*{2mm}
-\caption{Summary of coefficients of the linear models adjusting number
-  of change size occurrences vs. size.\label{t:sizes}}
+After parameter's analysis, in tables III and IV, the results of the hypothesis test can be found.
+
+We can observe that in general, as the repositories evolve over time, there is a tendency to the appearance of a greater probability in favor of power law existence.
+
+Even so, it is worth noting the complete lack of repositories in which our confidence in finding a power law distribution is high (following our scale: \textit{Good}).
+
+\begin{table}[htbp]
+	\caption{2017 Parameters with powerlaw fitting}
+	\begin{center}
+		\begin{tabular}{| p{0.12\linewidth} | p{0.1\linewidth} | p{0.3\linewidth} | p{0.3\linewidth} |}
+			\hline
+Repository name &$x_{min}$ & $\alpha$ & $\sigma$\\
+\hline
+atom &10.0 &2.039242998376567  &0.15492119930071382 \\
+cask &18.0 &1.7336857967225443  &0.06725686671465021 \\
+Dancer2 &107.0 &2.177500075690754  &0.07730666731550309 \\
+django &10786.0 &2.1744317304939558  &0.01917838984962695 \\
+docker &73.0 &1.4645926562553306  &0.004754872537365103\\
+ejabberd &2.0 &1.228631569923214  &0.0033017325614456455 \\
+fission &25.0 &1.7697310637483803  &0.09937185303186655 \\
+mojo &32.0 &2.1283668081735456  &0.03162540535355575 \\
+Moose &36.0 &1.768059278495766  &0.0197132783524576 \\
+rakudo &11.0 &1.6159534004325067  &0.006834230629556248 \\
+scalatra &105.0 &1.7126278313239238  &0.02583273870367301 \\
+tensorflow &6.0 &1.2136744934008  &0.002587381661200525 \\
+tpot &39.0 &1.601798428793051 &0.0374663336679551 \\
+tty &85.0 &2.5687968664786887  &0.16355837969418938 \\
+vue &10.0 &1.4008340778667951  &0.007381204719143647\\
+webpack &66.0 &1.7525127838915868 &0.030568742256899546\\ 
+			\hline
+		\end{tabular}
+	\end{center}
 \end{table}
-%
 
 
-\begin{figure*}[h!tb]
-  \centering
-<<powerlaw,message=FALSE, fig.subcap=summary$Name,echo=FALSE,warning=FALSE,fig.height=4,out.width='.115\\linewidth'>>=
-zipf.fit.df <- data.frame(Name = character(),
-                          Coefficient = double(),
-                          Intercept = double())
-for (i in 1:length(lines) ) {
-    sorted.lines <- data.frame(x=1:length(lines[[i]]$Lines.changed),Lines.changed=as.numeric(lines[[i]][order(-lines[[i]]$Lines.changed),]$Lines.changed))
-    print(ggplot()+geom_point(data=sorted.lines,aes(x=x,y=Lines.changed))+scale_y_log10())
-    sorted.lines.no0 <- sorted.lines[sorted.lines$Lines.changed>0,]
-    repo <- strsplit(paste(summary[[1]][i],""),"_")
-    zipf.fit <- lm(log(sorted.lines.no0$Lines.changed) ~ sorted.lines.no0$x)
-    zipf.fit.df <- rbind( zipf.fit.df,
-                         data.frame( Name = repo[[1]][1],
-                                    Intercept = summary(zipf.fit)$coefficients[1],
-                                    Coefficient = summary(zipf.fit)$coefficients[2] ))
-}
-@ 
-\caption{Zipf, that is, ranked change sizes with logarithmic $y$ axis for the 16 repositories analyzed.\label{fig:zipf}}
-\end{figure*}
+\begin{table}[htbp]
+	\caption{2019 Parameters with powerlaw fitting}
+	\begin{center}
+		\begin{tabular}{| p{0.12\linewidth} | p{0.1\linewidth} | p{0.3\linewidth} | p{0.3\linewidth} |}
+	\hline
+	Repository name &$x_{min}$ & $\alpha$ & $\sigma$\\
+	\hline
+atom  &9.0  &1.8359195263285408  &0.11705214645679832 \\
+cask  &22.0   &1.7974451838770937  &0.07249501671609943 \\
+Dancer2  &106.0   &2.261037545006354  &0.08425661509414822 \\
+django  &22380.0   &2.6887068697480156  &0.03580856180986959\\
+docker  &85.0  &1.471139237773135  &0.004450258248742491 \\
+ejabberd  &4.0   &1.2671552485187476  &0.00372055095134032 \\
+fission  &22.0   &1.4589753590316525  &0.021399836458042016\\ 
+mojo  &32.0   &2.1384964656994434  &0.031043490328162827 \\
+Moose  &36.0   &1.7677961781806713  &0.019622681314368864 \\
+rakudo  &12.0   &1.603181925304308  &0.006028504486885445 \\
+scalatra  &105.0  &1.678355887867916  &0.02363164712583398 \\
+tensorflow  &193475.0  &3.638954831303079  &0.17832404194194001 \\
+tpot  &176.0   &2.139617006349855  &0.08401368034180524 \\
+tty  &83.0   &2.6669971731409587  &0.1582243695783554 \\
+vue  &12.0   &1.4407170088980175  &0.007474075257736019 \\
+webpack &50.0  &1.481958114820392  &0.00906295021690492 \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+
+\begin{table}[htbp]
+	\caption{2017 summary results}
+\begin{center}
+	\begin{tabular}{| p{0.12\linewidth} | p{0.08\linewidth} | p{0.08\linewidth} | p{0.06\linewidth} | p{0.1\linewidth} |p{0.13\linewidth} | p{0.5\linewidth} |}
+		\hline
+		Repository name & KS test & PL vs. LogN & PL vs. Exp & PL vs. PLtrunc & Result \\ 
+		\hline
+		atom & 0.244 &ND & ND &PLtrunc & Truncated \\ 
+		cask & 0.236 &ND & PL & ND & Moderated \\
+		Dancer2 &0.178 &ND &PL &ND & Moderated \\
+		django &0.002 &LogN &PL &PLtrunc &None\\
+		docker &0 &LogN &PL &PLtrunc &None\\
+		ejabberd &0 &LogN &PL &PLtrunc &None\\
+		fission &0.654 &ND &PL &PLtrunc &PLtrunc\\
+		mojo &0.874 &PL &PL &ND & Moderated \\
+		Moose &0.2 &PL &PL &PLtrunc & PLtrunc\\
+		rakudo &0 &PL &PL &PLtrunc & None\\
+		scalatra &0 &LogN &PL &PLtrunc & None\\
+		tensorflow &0 &LogN &PL &PLtrunc & None\\
+		tpot &0.01 &LogN &PL &PLtrunc &None\\
+		tty &0.418 &ND &ND &ND & Moderated \\
+		vue &0 &PL &PL &PLtrunc & None\\
+		webpack &0.004 &LogN &PL & PLtrunc & None\\
+		\hline
+	\end{tabular}
+\end{center}
+\end{table}
 
 % Can we maybe show all repos in the past and now? Would that be useful?
 
+\begin{table}[htbp]
+	\caption{2019 summary results}
+	\begin{center}
+		\begin{tabular}{| p{0.12\linewidth} | p{0.08\linewidth} | p{0.08\linewidth} | p{0.08\linewidth} | p{0.1\linewidth} |p{0.13\linewidth} | p{0.09\linewidth} |}
+			\hline
+			Repository name & KS test & PL vs. LogN & PL vs. Exp & PL vs. PLtrunc & Result \\ 
+			\hline
+			atom &0.108 &ND &ND &PLtrunc & Truncated \\
+			cask &0.276 &ND &PL &ND & Moderate \\
+			Dancer2 &0.426 &ND &PL &ND & Moderate \\
+			django &0.862 &LogN &PL &PLtrunc &Truncated \\
+			docker &0.118 &LogN &PL &PLtrunc & Moderate \\
+			ejabberd &0 &LogN &PL &PLtrunc & None\\
+			fission &0 &ND &PL &PLtrunc & None \\
+			mojo &0.88 &PL &PL &ND &Moderate \\
+			Moose &0.224 &PL &PL &PLtrunc &Truncated \\
+			rakudo &0 &PL &PL &PLtrunc & None \\
+			scalatra &0 &LogN &PL &PLtrunc & None \\
+			tensorflow &0.418 &LogN &PL &PLtrunc & Moderate \\
+			tpot &0.184 &LogN &PL &PLtrunc & Truncated \\
+			tty &0.47 &ND &ND &ND & Moderate \\
+			vue &0 &PL &PL &PLtrunc & None \\
+			webpack &0.002 &LogN &PL &PLtrunc & None\\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+% following pictores take too long to compile everytime we create the pdf, so I
+% create them out of the document.
+\begin{figure}[htbp]
+	\centerline{\includegraphics[width=0.5\textwidth]{plots/mojo-2017.eps}}
+	\caption{PDF plot of a repository with \textit{Moderate} rank: Mojo from 2017.}
+	\label{mojo}
+\end{figure}
+
+
+
+\begin{figure}[htbp]
+	\centerline{\includegraphics[width=0.5\textwidth]{plots/docker.eps}}
+	\caption{PDF plot of a repository with \textit{None} rank: Docker from 2017.}
+	\label{docker}
+\end{figure}
 
 
 % --------------------------------------------------------
@@ -510,6 +545,23 @@ for (i in 1:length(lines) ) {
 
 % Several things we can do in the conclusions
 % * So, most repositories are _not_ actually self-organized because they do not follow a power law? Answer: We can't affirm that. Power laws only manifest themselves in critical states; self-organization will still take place. 
+
+In conclusion, there is still much to research in the evolution of software through code repositories.  %That's not a very good conclusion... That should be the conclusion to the conclusion - JJ
+
+In general, the probability of finding a power law is quite low, so that up to now, and in the repositories studied, we can not affirm categorically that the system is in a critical state due to self-organization.
+
+This result, however, does not imply that there is not any kind of self-organization or even a powerlaw, but that the system has not been regulated enough and, therefore has not been established near a possible critical state.
+
+Faced with the most common visualizations, the one used in our paper highlights even more how we can not affirm the existence of power laws distributions. See as an example how Fig. \ref{docker}. shows that the adjustment of a power law would not capture some characteristics in the tail of our data. 
+
+On the other hand, Fig. \ref{mojo}. is an example of when we can suspect the existence of a power law in the repository. A distribution that also remains in time till 2019. This can be an indicative that this repository is self-organizing to stay in that point.
+
+Furthermore we would like to explore the possible causes of such dramatic changes as the ones seen in repositories like django and tensorflow, since they can be related to a possible phase change.
+
+In any case, the article presents an adequate and objective workflow to study the existence of power law distributions that settles the status of these kind of measures in software development via repositories.
+
+Thanks to this procedure, we hope we can constitute a new state of art, from which researchers can begin to study these and other properties of code repositories in order to understand which of them may be related to self-organization and which ones have a very low probability of that.  
+
 
 \bibliographystyle{apalike}
 \bibliography{geneura,biblio}
