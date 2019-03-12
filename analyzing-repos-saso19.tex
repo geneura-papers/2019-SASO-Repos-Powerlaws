@@ -157,76 +157,10 @@ The general trend being the lack of statistical evidence that supports the hypot
 
 Currently, the general trend that started with the description of the power laws in self-organized systems has been slowed down. Instead, due to the existence of more objective evaluation methods, the results that were assumed until now are being re-evaluated.
 
-Examples of this trend are papers such as \cite{Holme2019, Broido2019}, where the power laws in the networks and in the results will be reevaluated.
+Examples of this trend are papers such as \cite{Holme2019, Broido2019}, where the power laws in the networks and in the results have been reevaluated, obtaining an analysis that can change the way we make our assumptions about power laws.
 
-\cite{Jones2003}
-\cite{voitalov2018scale}
-\cite{Stumpf665}
 
-\cite{merelo2017self,arafat2009commit,merelo16:self}
-
-% below it is the soa of the previous paper
-
-As far as we know, there has not been a continuing line of research on
-self-organized criticality in software projects or, for that matter,
-any other kind of collaborative work teams. The main reason might be
-that researchers have thoroughly
-proved that several big software repositories seem to be in a SOC state,
-\cite{wu2007empirical,gorshenev2004punctuated}, although some
-not-so-big and not-really-software repositories seem to be in that
-state too \cite{Merelo2016:repomining,merelo16:slash,merelo16:self};
-in these last papers suggest, that since these repositories have different characteristics in terms
-of the number of users, age and type of information they hold implies that
-self-organization, as it should be expected, is achieved with relative
-ease and due to factors not related to the nature of the content being
-developed, but the way the interaction is done itself. 
-
-Indeed, this state of self-organized criticality
-quantitatively proves what has been already established via
-qualitative analysis, the fact that in many successful software
-projects, developers self-organize \cite{Crowston2007564}, 
-which is
-the preferred way of working in distributed and volunteer
-teams \cite{crowston2012free}. In fact, this way of organization
-matches our own experience in development of open source projects such
-as \cite{ae09,2016arXiv160101607M}, which are developed mainly by one
-or a few coders, helped sporadically by other coders that find an
-error and fix it or adapt the code to particular situations. 
-In fact, this self-organization has also been observed in similar
-projects such as Wikipedia \cite{10.1371/journal.pone.0017333}
-
-A critical state might eventually emerge from self-organization
-given the necessary conditions. However, there has been no work going further and
-proving this even in the case that the team is carried out by a small team and
-on repositories that are not devoted to software development. And this
-critical state is key to carry the system to adaptive success, as
-defined by \cite{benbya2006toward}, which presents 
-the seven mechanisms that create complexity as initially enunciated for
-biological systems and apply them to information system
-development. 
-
-One of these principles, the principle of {\em change rate}, which appears in the
-way of observation-orientation-decision-action, is very explicit in
-open source development, where you usually observe a repository or
-project for a certain time, then find if there is something to fix or
-the way you can adapt it to your particular circumstances, decide what
-to do and how to do it, and, eventually, act on your fork, resulting in a
-pull request to the original repository. These activities can
-effectively be defined as social, so that teamwork in software
-repositories is embedded in a kind of social
-network. \cite{valverde2007self}
-have proved how this network grows under the tension of top-down or
-hierarchical rules and self-organization emerges from the bottom,
-which makes software development teams a complex social system, indicating that the self-organized critical state would be much
-more pervasive than initially thought. 
-
-In this paper we will mine software repositories and take the measures
-that would confirm they are in a self-organized critical
-state. Eventually, our intention is to try and find the point when
-phases change, although in this paper we will focus in studying the
-existence of a self-organized criticality state in the repositories under study.
-Next we
-will present the methodology used to choose those repositories and
+Next we will present the methodology used to choose those repositories and
 mine their information. 
 
 
@@ -360,19 +294,27 @@ plots at it is stated in \cite{newman2005power}.
 
 \section{Results}
 \label{res}
-%
-In this section we will briefly describe the results obtained. % Is this really needed?
-First, analyzing the parameters of the possible power law distribution, we find that in those repositories with low variation of the $x_{min}$ parameter there is a lack of correlation between the changes in the estimated starting point from which the distribution of power law starts and the scale parameter, $\alpha$. % What is the implication of this? This is a conference, it's not a Maths conference, you need to really explain what this is about- JJ
+% % Is this really needed?
+First, analyzing the parameters of the possible power law distribution, we find that in those repositories with low variation of the $x_{min}$ parameter there is a lack of correlation between the changes in the estimated starting point from which the distribution of power law starts and the scale parameter, $\alpha$. Even if small changes in $xmin$ produce small changes in $\alpha$, the lack of correlation probably means that this changes 
+are the result of the natural stochasticity of the evolution process.  % What is the implication of this? This is a conference, it's not a Maths conference, you need to really explain what this is about- JJ
 
-However, as can be seen in tables I and II, repositories such as tensorflow or django, which have a strong variation in the initial point, also have a greater variation in the scale parameter. % Implying what? - JJ
+However, as can be seen in tables \ref{tab:2017pars} and \ref{tab:2019pars}, repositories such as django, which have a strong variation in the initial point, also have a greater variation in the scale parameter. This is produce becaouse of a change in the overall distribution. The structure of power law is starting in other point of the data which obiously results in a different power law fit that is probably different from the 2017's fit  % Implying what? - JJ
 
-As for the errors committed, calculated in the $\sigma$ column, they all remain relatively low, which assures the previous calculations.
 
-After analyzing the parameters analysis the results of the hypothesis test can be found in tables III and IV. % You need to use automatic references. And usually Tables is in caps. - JJ
+Another special remark shoul be addressed to Tensorflow. The distribution fit of the repository 2019 has been a little controversy between \cite{alstott2014powerlaw} and \cite{gillespie2015power}. We believe the main reason for that is the two different section detected by their algorithms. However, in both cases results produce similar results in the tests.
 
-We can observe that in general, as the repositories evolve over time, there is a tendency to the appearance of a greater probability in favor of power law existence.
+
+After analyzing the parameters analysis the results of the hypothesis test can be found in Tables \ref{tab:2017tests} and \ref{tab:2019tests}. 
+
+We can observe that in general, as the repositories evolve over time, there is a tendency to the appearance of a greater probability in favor of power law existence, as None cases have been reduced between 2017 and 2019.
 
 Even so, it is worth noting the complete lack of repositories in which our confidence in finding a power law distribution is high (following our scale: \textit{Good}).
+
+Faced with the most common visualizations, the one used in our paper highlights even more how we can not affirm the existence of power laws distributions if we look at them in detail. See as an example how Fig. \ref{fig:docker}. shows that the adjustment of a power law would not capture some characteristics in the tail of our data. 
+
+We would like to remark that, even in smaller plots like \ref{fig:pl2017} and \ref{fig:pl2019}, where we could easily say that there are power laws only by sight, the mathematics presented in this paper support that the probability of that happening is, as maximum, \textit{ moderate}.
+
+A proper example of this kind of biased assumptions is Fig. \ref{fig:mojo}. Seen the Mojo distribution and power law fit we can suspect the existence of a power law in the repository. Its distribution that also remains in time till 2019. This can be an indicative that this repository is self-organizing to stay in that point. But even in this case, the probability of a power law is only, again, \textit{moderate}.
 
 % The whole idea about using .Rnw is to have this generated automatically. Maybe next time - JJ
 \begin{table*}[htbp]
@@ -423,7 +365,7 @@ mojo  &32.0   &2.1384964656994434  &0.031043490328162827 \\
 Moose  &36.0   &1.7677961781806713  &0.019622681314368864 \\
 rakudo  &12.0   &1.603181925304308  &0.006028504486885445 \\
 scalatra  &105.0  &1.678355887867916  &0.02363164712583398 \\
-tensorflow  &193475.0  &3.638954831303079  &0.17832404194194001 \\
+tensorflow  &16.0  & 1.276851335699674  & 0.0017743964236792348 \\
 tpot  &176.0   &2.139617006349855  &0.08401368034180524 \\
 tty  &83.0   &2.6669971731409587  &0.1582243695783554 \\
 vue  &12.0   &1.4407170088980175  &0.007474075257736019 \\
@@ -438,7 +380,7 @@ webpack &50.0  &1.481958114820392  &0.00906295021690492 \\
 \begin{table*}[htbp]
 	\caption{2017 summary results}
 \begin{center}
-	\begin{tabular}{| p{0.12\linewidth} | p{0.08\linewidth} | p{0.08\linewidth} | p{0.06\linewidth} | p{0.1\linewidth} |p{0.13\linewidth} | p{0.5\linewidth} |}
+	\begin{tabular}{| c |c| c | c| c |c | c |}
 		\hline
 		Repository name & KS test & PL vs. LogN & PL vs. Exp & PL vs. PLtrunc & Result \\ 
 		\hline
@@ -536,18 +478,16 @@ webpack &50.0  &1.481958114820392  &0.00906295021690492 \\
 % Several things we can do in the conclusions
 % * So, most repositories are _not_ actually self-organized because they do not follow a power law? Answer: We can't affirm that. Power laws only manifest themselves in critical states; self-organization will still take place. 
 
-In conclusion, there is still much to research in the evolution of software through code repositories.  %That's not a very good conclusion... That should be the conclusion to the conclusion - JJ
+In conclusion, we should always use a standard mathematical approach in order to affirm any behaviour in our data's distribution. That way, we can assure that our results are objetive (not based in our sight or plots) and they have been tested statistically. %That's not a very good conclusion... That should be the conclusion to the conclusion - JJ
 
-In general, the probability of finding a power law is quite low, so that up to now, and in the repositories studied, we can not affirm categorically that the system is in a critical state due to self-organization.
+In general, the probability of finding a power law  in the repositories studied is quite low, so, up to now, we can not affirm categorically that the system is in a critical state due to self-organization.
 
 This result, however, does not imply that there is not any kind of self-organization or even a powerlaw, but that the system has not been regulated enough and, therefore has not been established near a possible critical state.
 
 % Figures should be referenced in the results section, not the conclusions. - JJ
-Faced with the most common visualizations, the one used in our paper highlights even more how we can not affirm the existence of power laws distributions. See as an example how Fig. \ref{fig:docker}. shows that the adjustment of a power law would not capture some characteristics in the tail of our data. 
 
-On the other hand, Fig. \ref{fig:mojo}. is an example of when we can suspect the existence of a power law in the repository. A distribution that also remains in time till 2019. This can be an indicative that this repository is self-organizing to stay in that point.
 
-Furthermore we would like to explore the possible causes of such dramatic changes as the ones seen in repositories like django and tensorflow, since they can be related to a possible phase change.
+Furthermore we would like to explore the possible causes of such dramatic changes as the ones seen in repositories like django, since they can be related to a possible phase change.
 
 In any case, the article presents an adequate and objective workflow to study the existence of power law distributions that settles the status of these kind of measures in software development via repositories.
 
@@ -555,8 +495,9 @@ Thanks to this procedure, we hope we can constitute a new state of art, from whi
 
 % There is always a "future work" paragraph here. Where do you go from here?  - JJ
 This paper is also a starting point for the in-depth study of how,
-when and what produces complex behaviors or self-organized criticality in code repositories. We have only treated the number of commits, but there are many other parameters or variables (contributions per author, per file, blame chunks \footnote{code lines that are next to each other and were modified together} or authors in different files)
+when and what produces complex behaviors or self-organized criticality in code repositories. We have only treated the number of commits, but there are many other parameters or variables (contributions per author, per file, blame chunks \footnote{Code lines that are next to each other and were modified together} or authors in different files)
 that can cause the appearance of power laws within the repositories, which could give us clues about a possible critical state of our system.
+
 On the other hand, as our sample size is relatively small, we could extend this study to different repositories, to detect possible general patterns or patterns related to repositories written in certain languages or ascribed to certain software projects.
 
 \bibliographystyle{apalike}
