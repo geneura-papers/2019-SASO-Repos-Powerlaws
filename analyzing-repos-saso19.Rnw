@@ -429,7 +429,7 @@ We can observe that in general, as the repositories evolve over time, there is a
 
 Even so, it is worth noting the complete lack of repositories in which our confidence in finding a power law distribution is high (following our scale: \textit{Good}).
 
-\begin{table}[htbp]
+\begin{table*}[htbp]
 	\caption{2017 Parameters with powerlaw fitting}
 	\begin{center}
 		\begin{tabular}{| p{0.12\linewidth} | p{0.1\linewidth} | p{0.3\linewidth} | p{0.3\linewidth} |}
@@ -455,7 +455,7 @@ webpack &66.0 &1.7525127838915868 &0.030568742256899546\\
 			\hline
 		\end{tabular}
 	\end{center}
-\end{table}
+\end{table*}
 
 
 \begin{table*}[htbp]
