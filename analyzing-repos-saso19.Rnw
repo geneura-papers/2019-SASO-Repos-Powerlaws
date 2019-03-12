@@ -416,19 +416,20 @@ plots at it is stated in \cite{newman2005power}.
 \section{Results}
 \label{res}
 %
-In this section we will briefly describe the results obtained.
-First, analyzing the parameters of the possible power law distribution, we find that in those repositories with low variation of the $x_{min}$ parameter there is a lack of correlation between the changes in the estimated starting point from which the distribution of power law starts and the scale parameter, $\alpha$.
+In this section we will briefly describe the results obtained. % Is this really needed?
+First, analyzing the parameters of the possible power law distribution, we find that in those repositories with low variation of the $x_{min}$ parameter there is a lack of correlation between the changes in the estimated starting point from which the distribution of power law starts and the scale parameter, $\alpha$. % What is the implication of this? This is a conference, it's not a Maths conference, you need to really explain what this is about- JJ
 
-However, as can be seen in tables I and II, repositories such as tensorflow or django, which have a strong variation in the initial point, also have a greater variation in the scale parameter.
+However, as can be seen in tables I and II, repositories such as tensorflow or django, which have a strong variation in the initial point, also have a greater variation in the scale parameter. % Implying what? - JJ
 
 As for the errors committed, calculated in the $\sigma$ column, they all remain relatively low, which assures the previous calculations.
 
-After parameter's analysis, in tables III and IV, the results of the hypothesis test can be found.
+After analyzing the parameters analysis the results of the hypothesis test can be found in tables III and IV. % You need to use automatic references. And usually Tables is in caps. - JJ
 
 We can observe that in general, as the repositories evolve over time, there is a tendency to the appearance of a greater probability in favor of power law existence.
 
 Even so, it is worth noting the complete lack of repositories in which our confidence in finding a power law distribution is high (following our scale: \textit{Good}).
 
+% The whole idea about using .Rnw is to have this generated automatically. Maybe next time - JJ
 \begin{table*}[htbp]
 	\caption{2017 Parameters with powerlaw fitting}
 	\begin{center}
@@ -515,7 +516,7 @@ webpack &50.0  &1.481958114820392  &0.00906295021690492 \\
 \end{center}
 \end{table*}
 
-% Can we maybe show all repos in the past and now? Would that be useful?
+% Can we maybe show all repos in the past and now? Would that be useful? - JJ
 
 \begin{table*}[htbp]
 	\caption{2019 summary results}
@@ -545,12 +546,12 @@ webpack &50.0  &1.481958114820392  &0.00906295021690492 \\
 	\end{center}
 \end{table*}
 
-% following pictores take too long to compile everytime we create the pdf, so I
+% following pictures take too long to compile everytime we create the pdf, so I
 % create them out of the document.
 \begin{figure*}[htbp]
 	\centerline{\includegraphics[width=0.95\textwidth]{plots/mojo-2017.eps}}
 	\caption{PDF plot of a repository with \textit{Moderate} rank: Mojo from 2017.}
-	\label{mojo}
+	\label{fig:mojo}
 \end{figure*}
 
 
@@ -558,7 +559,7 @@ webpack &50.0  &1.481958114820392  &0.00906295021690492 \\
 \begin{figure*}[htbp]
 	\centerline{\includegraphics[width=0.95\textwidth]{plots/docker.eps}}
 	\caption{PDF plot of a repository with \textit{None} rank: Docker from 2017.}
-	\label{docker}
+	\label{fig:docker}
 \end{figure*}
 
 
@@ -577,15 +578,18 @@ In general, the probability of finding a power law is quite low, so that up to n
 
 This result, however, does not imply that there is not any kind of self-organization or even a powerlaw, but that the system has not been regulated enough and, therefore has not been established near a possible critical state.
 
-Faced with the most common visualizations, the one used in our paper highlights even more how we can not affirm the existence of power laws distributions. See as an example how Fig. \ref{docker}. shows that the adjustment of a power law would not capture some characteristics in the tail of our data. 
+% Figures should be referenced in the results section, not the conclusions. - JJ
+Faced with the most common visualizations, the one used in our paper highlights even more how we can not affirm the existence of power laws distributions. See as an example how Fig. \ref{fig:docker}. shows that the adjustment of a power law would not capture some characteristics in the tail of our data. 
 
-On the other hand, Fig. \ref{mojo}. is an example of when we can suspect the existence of a power law in the repository. A distribution that also remains in time till 2019. This can be an indicative that this repository is self-organizing to stay in that point.
+On the other hand, Fig. \ref{fig:mojo}. is an example of when we can suspect the existence of a power law in the repository. A distribution that also remains in time till 2019. This can be an indicative that this repository is self-organizing to stay in that point.
 
 Furthermore we would like to explore the possible causes of such dramatic changes as the ones seen in repositories like django and tensorflow, since they can be related to a possible phase change.
 
 In any case, the article presents an adequate and objective workflow to study the existence of power law distributions that settles the status of these kind of measures in software development via repositories.
 
 Thanks to this procedure, we hope we can constitute a new state of art, from which researchers can begin to study these and other properties of code repositories in order to understand which of them may be related to self-organization and which ones have a very low probability of that.  
+
+% There is always a "future work" paragraph here. Where do you go from here?  - JJ
 
 
 \bibliographystyle{apalike}
