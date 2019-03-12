@@ -401,6 +401,7 @@ webpack &66.0 &1.7525127838915868 &0.030568742256899546\\
 			\hline
 		\end{tabular}
 	\end{center}
+\label{tab:2017pars}
 \end{table*}
 
 
@@ -430,6 +431,7 @@ webpack &50.0  &1.481958114820392  &0.00906295021690492 \\
 			\hline
 		\end{tabular}
 	\end{center}
+\label{tab:2019pars}
 \end{table*}
 
 
@@ -459,6 +461,7 @@ webpack &50.0  &1.481958114820392  &0.00906295021690492 \\
 		\hline
 	\end{tabular}
 \end{center}
+\label{tab:2017tests}
 \end{table*}
 
 % Can we maybe show all repos in the past and now? Would that be useful? - JJ
@@ -489,6 +492,7 @@ webpack &50.0  &1.481958114820392  &0.00906295021690492 \\
 			\hline
 		\end{tabular}
 	\end{center}
+\label{tab:2019tests}
 \end{table*}
 
 % following pictures take too long to compile everytime we create the pdf, so I
@@ -507,6 +511,21 @@ webpack &50.0  &1.481958114820392  &0.00906295021690492 \\
 	\label{fig:docker}
 \end{figure*}
 
+
+
+\begin{figure*}[htbp]
+	\centerline{\includegraphics[width=1\textwidth]{plots/pl2017.eps}}
+	\caption{PDF plot of all repositories 2017. Red line represents the power law fit}
+	\label{fig:pl2017}
+\end{figure*}
+
+
+
+\begin{figure*}[htbp]
+	\centerline{\includegraphics[width=1\textwidth]{plots/pl2019.eps}}
+	\caption{PDF plot of all repositories 2019. Red line represents the power law fit}
+	\label{fig:pl2019}
+\end{figure*}
 
 % --------------------------------------------------------
 
@@ -535,7 +554,10 @@ In any case, the article presents an adequate and objective workflow to study th
 Thanks to this procedure, we hope we can constitute a new state of art, from which researchers can begin to study these and other properties of code repositories in order to understand which of them may be related to self-organization and which ones have a very low probability of that.  
 
 % There is always a "future work" paragraph here. Where do you go from here?  - JJ
-
+This paper is also a starting point for the in-depth study of how,
+when and what produces complex behaviors or self-organized criticality in code repositories. We have only treated the number of commits, but there are many other parameters or variables (contributions per author, per file, blame chunks \footnote{code lines that are next to each other and were modified together} or authors in different files)
+that can cause the appearance of power laws within the repositories, which could give us clues about a possible critical state of our system.
+On the other hand, as our sample size is relatively small, we could extend this study to different repositories, to detect possible general patterns or patterns related to repositories written in certain languages or ascribed to certain software projects.
 
 \bibliographystyle{apalike}
 \bibliography{geneura,biblio}
