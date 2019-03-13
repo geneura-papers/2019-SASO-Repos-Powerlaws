@@ -175,16 +175,15 @@ mine their information.
 \label{sec:method}
 
 \subsection{Data extraction}
-We have chosen 16 repositories in different states of development,
-which represent a wide array of languages and functionalities, from
-web frameworks such as Django to Atom plugins, through one-of-a-kind
-frameworks such as Docker. Normally a project includes several
-different languages, and these languages are either
-interpreted or compiled, either to machine code or to
-bytecode. Repositories vary also in {\em professionalism}, from
-a small Atom editor plugin for Perl6 to Docker, an open
-platform for building and running isolated applications,
-created and maintained by a fully professional community.
+We have chosen 16 repositories in different states of development.
+These repositories were chosen in \cite{Merelo2016:repomining}, for several reasons:  They all represent a wide array of languages and functionalities, from web frameworks such as Django to Atom plugins, through one-of-a-kind frameworks such as Docker.
+
+ Normally a code repository is related to a software project, for this reason, it is usual that they include several
+different languages which are used in different parts of the project.
+This mixture of languages also offer a big range of variability between languages that are interpreted or compiled, either to machine code or to
+bytecode. 
+
+Repositories vary also in {\em professionalism}, that is, the team behind that software project. From a small Atom editor plugin to TensorFlow, an open library created and maintained by a fully professional community.
 
 Repository mining was done during the months of January to March
 2017, with the second sweep of the same repositories performed in
@@ -210,75 +209,75 @@ Up to this point, there is nothing new. But is the way that we evaluate our resu
 Once the information from the repositories has been extracted, we
 proceed to analyze it in order to find clues about what kind of distribution is generating our data. 
 
-With that particular objetive in mind, we change the methodology used
+With that particular objective in mind, we change the methodology used
 in \cite{merelo2017self} for several reasons.
 
 First of all we want to offer a test that checks whether the observed data 
 set actually follows a power-law, instead of only visualize the result. 
-This kind of tests can vary based on differtent measured and techniques. The one we
+This kind of tests can vary based on different measured and techniques. The one we
 are going to use is suggested in \cite{clauset2009power}, which consists in using a
-goodness-of-fit hypothesis test via boostrapping procedure. 
+goodness-of-fit hypothesis test via bootstrapping procedure. 
 
-Due to the use of boostrapping, this procedure is a time and resources consuming one.
+Due to the use of bootstrapping, this procedure is a time and resources consuming one.
 We essentially  generate  multiple  data  sets  with our two main parameters $x_{min}$ 
-and $\alpha$  and  then  we reinferr the model parameters. The outcome of the algorithm 
+and $\alpha$  and  then  we re-infer the model parameters. The outcome of the algorithm 
 will result in a P-value, which, if is large enough, tell us that the difference
-between our data and the powerlaw model we have generated is small and mostly attributed
-to statisticall randomness. On the other hand, if P-value is close to 0, it is quite unlikely
+between our data and the power law model we have generated is small and mostly attributed
+to statistically randomness. On the other hand, if P-value is close to 0, it is quite unlikely
 that our model fits the data properly.
-Following \cite{clauset2009power} we choose our treshold value in $p=0.01$, in addition
-we are going to perfom this analysis with R package: PoweRlaw. A detailed description
+Following \cite{clauset2009power} we choose our threshold value in $p=0.01$, in addition
+we are going to perform this analysis with R package: PoweRlaw. A detailed description
 of it and the hypothesis tests can be found in \cite{gillespie2015power}.
 
-Up to this point, we have detected what datasets are unlikely to be fitted by a powerlaw
+Up to this point, we have detected what data sets are unlikely to be fitted by a power law
 in any of its range. Notice, on the contrary case, that we are only assuming that
-we can not discard that a powerlaw is generating the data.
+we can not discard that a power law is generating the data.
 However, as there is some probability of the appearance of this distribution in our data
 we can study and analyze how its two main parameters may evolve between 2017 and 2019.
 
-As it is unrealist to think that a powerlaw distribution will
+As it is unrealistic to think that a power law distribution will
 fit all our data, our first step is to check what portion of the data
-could be fitted with a powerlaw, or in other words, what is the minimal value 
-(if there is one) from which the scaling relationship of the powerlaw begins
+could be fitted with a power law, or in other words, what is the minimal value 
+(if there is one) from which the scaling relationship of the power law begins
 \footnote{This is a fair assumption since we are working with heavy-tailed distributions 
 	and our main interest is the behaviour of the tail of our data.}. 
 This value is usually noted by $x_{min}$ and is our first parameter.
 
-Once we have the fisrt value, we proceed to estimate the scale of our powerlaw.
+Once we have the first value, we proceed to estimate the scale of our power law.
 As it is shown in papers like \cite{newman2005power, clauset2009power},
-least square method is a poor but widespreaded way to proceed when estimating the
+least square method is a poor but wide-spreaded way to proceed when estimating the
 scale parameter. Instead, we are going to use a direct method describe in
-\cite{clauset2009power} and impletmented in \cite{alstott2014powerlaw} that use
+\cite{clauset2009power} and implemented in \cite{alstott2014powerlaw} that use
 the data values we have. This method is known to produce a very nice fit with
 less error than the others mentioned above.
 
-Up to this point we have revisited our way of analyze powerlaw fitting and
+Up to this point we have revisited our way of analyze power law fitting and
 the estimation of our parameters. However, there is a more deep question unanswered:
-does our data really follow (in a statiscally relevant way) a powerlaw?
+does our data really follow (in a statistically relevant way) a power law?
 This kind of answers were lacking in \cite{merelo2017self} and they are relevant
 independently our first test's results, since they usually offer an unbiased look of the data . 
 
-Taking into account that our main question is wether a powerlaw is the best 
+Taking into account that our main question is wether a power law is the best 
 description of our data, we choose to apply a comparative test that could 
 evaluate if there are any alternative distribution that could have generated
-our data with greater likelihood than a powerlaw. That is the main reason why
-we choose to use a loglikehood ratio test implemented in \cite{alstott2014powerlaw}.
-There are two algorithm's outcomes. First we have the loglikelihood ratio between the 
+our data with greater likelihood than a power law. That is the main reason why
+we choose to use a log-likelihood ratio test implemented in \cite{alstott2014powerlaw}.
+There are two algorithm's outcomes. First we have the log-likelihood ratio between the 
 two  candidate  distributions. The sign of this quantity will point out which
 distribution is more likely to be producing out data. After it, we calculate the signification 
-of this ratio, a P-value. Following \cite{alstott2014powerlaw} indications we establish our P-value treshold at $p=0.05$;
+of this ratio, a P-value. Following \cite{alstott2014powerlaw} indications we establish our P-value threshold at $p=0.05$;
 above that point the loglikehood ratio has no significance and we can not decide which distribution
 is better fitting out data.
 
 \subsection{Classification}
 
 With all this information we are able to offer a precise conclusion about the 
-probability that powerlaw is generating our data. To sum up all the tests in a single 
+probability that power law is generating our data. To sum up all the tests in a single 
 statement we use the scale proposed in \cite{clauset2009power}, which is described as:
 \begin{itemize}
-	\item \textbf{None}: Dataset is probably not distributed by a power law (first test failed).   
-	\item \textbf{Moderate}: Power law is a posible fit but there are other plausible distributions that fit the data.
-	\item \textbf{Good}: Power law is a posible fit and none of the other distributions is plausible.
+	\item \textbf{None}: Data-set is probably not distributed by a power law (first test failed).   
+	\item \textbf{Moderate}: Power law is a possible fit but there are other plausible distributions that fit the data.
+	\item \textbf{Good}: Power law is a possible fit and none of the other distributions is plausible.
 	\item \textbf{Truncated}: when truncated power law is clearly favored over a simple power law
 \end{itemize}
 
@@ -302,10 +301,10 @@ plots at it is stated in \cite{newman2005power}.
 First, analyzing the parameters of the possible power law distribution, we find that in those repositories with low variation of the $x_{min}$ parameter there is a lack of correlation between the changes in the estimated starting point from which the distribution of power law starts and the scale parameter, $\alpha$. Even if small changes in $xmin$ produce small changes in $\alpha$, the lack of correlation probably means that this changes 
 are the result of the natural stochasticity of the evolution process.  % What is the implication of this? This is a conference, it's not a Maths conference, you need to really explain what this is about- JJ
 
-However, as can be seen in tables \ref{tab:2017pars} and \ref{tab:2019pars}, repositories such as django, which have a strong variation in the initial point, also have a greater variation in the scale parameter. This is produce becaouse of a change in the overall distribution. The structure of power law is starting in other point of the data which obiously results in a different power law fit that is probably different from the 2017's fit  % Implying what? - JJ
+However, as can be seen in tables \ref{tab:2017pars} and \ref{tab:2019pars}, repositories such as Django, which have a strong variation in the initial point, also have a greater variation in the scale parameter. This is produce because of a change in the overall distribution. The structure of power law is starting in other point of the data which obviously results in a different power law fit that is probably different from the 2017's fit  % Implying what? - JJ
 
 
-Another special remark shoul be addressed to Tensorflow. The distribution fit of the repository 2019 has been a little controversy between \cite{alstott2014powerlaw} and \cite{gillespie2015power}. We believe the main reason for that is the two different section detected by their algorithms. However, in both cases results produce similar results in the tests.
+Another special remark should be addressed to Tensorflow. The distribution fit of the repository 2019 has been a little controversy between \cite{alstott2014powerlaw} and \cite{gillespie2015power}. We believe the main reason for that is the two different section detected by their algorithms. However, in both cases results produce similar results in the tests.
 
 
 After analyzing the parameters analysis the results of the hypothesis test can be found in Tables \ref{tab:2017tests} and \ref{tab:2019tests}. 
@@ -322,7 +321,7 @@ A proper example of this kind of biased assumptions is Fig. \ref{fig:mojo}. Seen
 
 % The whole idea about using .Rnw is to have this generated automatically. Maybe next time - JJ
 \begin{table*}[htbp]
-	\caption{2017 Parameters with powerlaw fitting}
+	\caption{2017 Parameters with power law fitting}
 	\begin{center}
 		\begin{tabular}{| p{0.12\linewidth} | p{0.1\linewidth} | p{0.3\linewidth} | p{0.3\linewidth} |}
 			\hline
@@ -352,7 +351,7 @@ webpack &66.0 &1.7525127838915868 &0.030568742256899546\\
 
 
 \begin{table*}[htbp]
-	\caption{2019 Parameters with powerlaw fitting}
+	\caption{2019 Parameters with power law fitting}
 	\begin{center}
 		\begin{tabular}{| p{0.12\linewidth} | p{0.1\linewidth} | p{0.3\linewidth} | p{0.3\linewidth} |}
 	\hline
@@ -482,16 +481,16 @@ webpack &50.0  &1.481958114820392  &0.00906295021690492 \\
 % Several things we can do in the conclusions
 % * So, most repositories are _not_ actually self-organized because they do not follow a power law? Answer: We can't affirm that. Power laws only manifest themselves in critical states; self-organization will still take place. 
 
-In conclusion, we should always use a standard mathematical approach in order to affirm any behaviour in our data's distribution. That way, we can assure that our results are objetive (not based in our sight or plots) and they have been tested statistically. %That's not a very good conclusion... That should be the conclusion to the conclusion - JJ
+In conclusion, we should always use a standard mathematical approach in order to affirm any behaviour in our data's distribution. That way, we can assure that our results are unbiased (not based in our sight or plots) and they have been tested statistically. %That's not a very good conclusion... That should be the conclusion to the conclusion - JJ
 
 In general, the probability of finding a power law  in the repositories studied is quite low, so, up to now, we can not affirm categorically that the system is in a critical state due to self-organization.
 
-This result, however, does not imply that there is not any kind of self-organization or even a powerlaw, but that the system has not been regulated enough and, therefore has not been established near a possible critical state.
+This result, however, does not imply that there is not any kind of self-organization or even a power law, but that the system has not been regulated enough and, therefore has not been established near a possible critical state.
 
 % Figures should be referenced in the results section, not the conclusions. - JJ
 
 
-Furthermore we would like to explore the possible causes of such dramatic changes as the ones seen in repositories like django, since they can be related to a possible phase change.
+Furthermore we would like to explore the possible causes of such dramatic changes as the ones seen in repositories like Django, since they can be related to a possible phase change.
 
 In any case, the article presents an adequate and objective workflow to study the existence of power law distributions that settles the status of these kind of measures in software development via repositories.
 
