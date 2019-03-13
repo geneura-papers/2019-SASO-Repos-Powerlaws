@@ -34,7 +34,6 @@
 
 \begin{abstract}
   
-  % Does self-organization imply power laws? Or a critical state? Self organization will take place even if a critical state has not been reached yet, right? - JJ
 Software development as done using modern methodologies and source
 control systems has been often established as an example of
 self-organization, with code growing and evolving organically, through
@@ -60,11 +59,10 @@ reevaluate its results and compare them with the current status of the
 repositories analyzed in it, trying to elucidate if there has been any
 change in the possible presence, or not, of a power law.
 
-
 \end{abstract}
 
 \begin{IEEEkeywords}
-	Complex systems, self-organizing systems, self-organized criticality, power laws, software development
+	Complex systems, self-organizing systems, self-organized criticality, power laws, software development, 
 	software repositories
 \end{IEEEkeywords}
 
@@ -80,29 +78,45 @@ Understanding what distribution is producing our data gives us insights of
 how confidently we are about claiming that our system is in a critical state, since this states
 are usually correlated with the appearance of a power law \cite{newman2005power}. % cite needed -bart
 
-Moreover, it is interesting to see if there is some kind of evolution in data. 
-A change in the distribution that explain the data, could be originated by a 
-phase change, and a phase change happens by passing a critical state. 
+Moreover, it is interesting to see if there is some kind of evolution in the distribution the data follows. 
+A change in the distribution that explain the data could be originated by a 
+phase change, and a phase change happens by getting to a critical state. % I don't like how this sentence is built... Too roundabout - JJ
 
-However, during this process, we have to justify every conclusion we get, not only 
+However, during the process of investigating the existence of self organization, or the change to a critical state, we have to justify every conclusion we get, not only 
 by fitting our data, but by giving a proper statistical measure of the probability 
 of our conclusions, that is, following an standardize mathematical method based on
-hypothesis testing.% Clarify what you mean by "A distorted version of reality", saying clearly what you want: revisit claims for the existence of power laws, showing that in most cases they only seem a power law. - JJ
+hypothesis testing.
 
 % * Why is self-organization in repositories important? What would it imply -JJ
 % I 'm not sure about how to "attack" this question. - Bart
+In our case, we are mainly interested in code repositories. The
+existence or not of a critical state is essential to understand the
+processes taking place in free software repositories, which are
+sometimes partly or fully based on volunteer work. In these cases,
+sustainability is the main objective, and understanding how
+self-organization relates to productivity and to the continuous
+collaboration of volunteers is essential to keep a software team
+healthy. Also, understanding the micro-mechanisms through which
+self-organization takes place provides insights on the possible
+incentives to avoid churn of volunteers, as well as to make their work
+add as much value as possible to the project.
 
-Following \cite{merelo2017self} approach, we are going to comprehend code repositories
-by the interactions (events) made in them. Code repositories are one of the ways 
+Following \cite{merelo16:self,Merelo2016:repomining,merelo17vue,DBLP:conf/iwann/MereloCV17,merelo2017self} approach, we are going to try and comprehend code repositories
+by the interactions (events) made in them. Code repositories are one
+of the main ways 
 software is developed nowadays. Multiple platforms like GitLab or GitHub 
 offer the possibility of interact with the code making changes, adding and deleting 
 lines. 
-All these interactions are reflected in an archive by what we call commits. From it
-we can obtain the data about how this code has been changed. 
+All these interactions are reflected in an archive by the so called
+commits. From this archive
+we can obtain the data about how this code has been changed. Although
+these changes sometimes obey issues with the code, or bug fixes, in
+many cases they simply are piecewise improvements or code changes that
+are decided by programmers themselves. 
 
-But to really start to understand the behavior of software development teams as
+But to really start to understand the behavior and possible self-organization of software development teams as
 reflected by their activity in repositories, we should not
-only try to fit a power law in our data but making a statistically
+only try to fit a power law in our data but try to make a statistically
 accurate study to confirm how much evidence we have of this type of
 behavior. 
 
@@ -110,22 +124,20 @@ Most of the measures and estimations about power laws in code repositories are c
 in studies like \cite{merelo2017self}, where some evidences of power laws are presented.
 However, since there are better methods to study this data \cite{clauset2009power}, 
 we are going to re-evaluate all the results obtained, offering an alternative skeptic view
-of the existence of power laws.
+of the existence of power laws, following recent papers such as \cite{Holme2019,Broido2019}.
 
-We have focused in this particular topic because of three reasons. 
-
-First of all, there are no 
+We have focused in this particular topic because of three reasons.\begin{itemize} 
+\item First of all, there are no 
 extensive analysis that addresses this question. We haven't found a comparative study 
 that offers data-based statistical measures to check if the power law assumptions hold.
 So we are going to fill this gap offering a complete statistically study about
 the evidences of power laws behavior in a variety of repositories.
-
-Moreover, we are not going to evaluate just our evidences about the existence of a power law,
+\item Moreover, we are not going to evaluate just our evidences about the existence of a power law,
 we are going to offer a short range of distributions that can generate similar results and could
 easily be confounded by a power law. This is an standard way to discover if our data is more likely
 to be produced by other heavy-tailed distribution \cite{clauset2009power}, like the logNormal
 or the truncated power law. 
-
+\item 
 Finally, since we are able to access to multiple years' data, we also interested in study the
 temporal evolution of the two previous analysis. Here our main objective is to show how these measure could 
 have changed (if they have at all). We should remember that repositories are evolving system
@@ -135,11 +147,13 @@ To locate and analyze this changes could be translated in a deeper knowledge in 
 of these system, specially in the presence of phase changes \cite{merelo2017self} or self-organized
 critically (understood as a mechanism by which the system is regulating himself to stay in those 
 parameters \cite{newman2005power}).
-
+\end{itemize}
 
 This way, we offer a test to analyze how much evidence there is for or
-against our assumptions in every step, and a set of comparatives to identify some relevant temporal
-changes, establishing a statistically correct starting point to answer the question: Does software
+against our assumptions in every step, and a set of comparatives to
+identify some relevant temporal 
+changes, establishing a statistically correct starting point to answer
+the question: Does software 
 development really follows a power law? 
 
 Next, we will explain our methodology followed by the results obtained,
