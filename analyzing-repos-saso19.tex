@@ -318,10 +318,19 @@ are the result of the natural stochasticity of the evolution process.  % What is
 However, as can be seen in tables \ref{tab:2017pars} and \ref{tab:2019pars}, repositories such as Django, which have a strong variation in the initial point, also have a greater variation in the scale parameter. This is produce because of a change in the overall distribution. The structure of power law is starting in other point of the data which obviously results in a different power law fit that is probably different from the 2017's fit  % Implying what? - JJ
 
 
-Another special remark should be addressed to Tensorflow. The distribution fit of the repository 2019 has been a little controversy between \cite{alstott2014powerlaw} and \cite{gillespie2015power}. We believe the main reason for that is the two different section detected by their algorithms. However, in both cases results produce similar results in the tests.
+Another special remark should be addressed to Tensorflow. The
+distribution fit of the repository 2019 has been a little controversy
+between \cite{alstott2014powerlaw} and \cite{gillespie2015power}. We
+believe the main reason for that is the two different section detected
+by their algorithms. However, in both cases results produce similar
+results in the tests. % "has been" or "has caused"? What is the nature
+                      % of that controversy? - JJ
 
-
-After analyzing the parameters analysis the results of the hypothesis test can be found in Tables \ref{tab:2017tests} and \ref{tab:2019tests}. 
+After analyzing the parameters analysis %analyzing the parameter
+                                %analysis? Really? - JJ 
+the results of the hypothesis
+test can be found in Tables \ref{tab:2017tests} and
+\ref{tab:2019tests}.  
 
 We can observe that in general, as the repositories evolve over time, there is a tendency to the appearance of a greater probability in favor of power law existence, as None cases have been reduced between 2017 and 2019.
 
@@ -496,18 +505,34 @@ webpack &50.0  &1.481958114820392  &0.00906295021690492 \\
 % Several things we can do in the conclusions
 % * So, most repositories are _not_ actually self-organized because they do not follow a power law? Answer: We can't affirm that. Power laws only manifest themselves in critical states; self-organization will still take place. 
 
-In conclusion, we should always use a standard mathematical approach in order to affirm any behaviour in our data's distribution. That way, we can assure that our results are unbiased (not based in our sight or plots) and they have been tested statistically. %That's not a very good conclusion... That should be the conclusion to the conclusion - JJ
+In general, we should always use a standard mathematical approach in
+order to affirm any behaviour in our data's distribution. That way, we
+can assure that our results are unbiased (not based in our sight or
+plots) and they have been tested statistically. This is what we have
+done in this paper, that not only uses that on data already published,
+but also updates the data checking whether there has been any
+evolution in the actual existence of a power law in the repositories
+under study.
 
-In general, the probability of finding a power law  in the repositories studied is quite low, so, up to now, we can not affirm categorically that the system is in a critical state due to self-organization.
+In general, the probability of finding a power law  in the
+repositories studied is quite low, so, up to now, we can not affirm
+categorically that the studied systems are in a critical state due to
+self-organization. 
 
-This result, however, does not imply that there is not any kind of self-organization or even a power law, but that the system has not been regulated enough and, therefore has not been established near a possible critical state.
+This result, however, does not imply that there is not any kind of
+self-organization or even a power law, but that the systems have not
+been regulated enough and, therefore has not been established near a
+possible critical state. 
 
-% Figures should be referenced in the results section, not the conclusions. - JJ
+Furthermore we would like to explore the possible causes of such
+dramatic changes as the ones seen in repositories like Django, since
+they can be related to a possible phase change. % But is there a power
+                                % law? - JJ
 
-
-Furthermore we would like to explore the possible causes of such dramatic changes as the ones seen in repositories like Django, since they can be related to a possible phase change.
-
-In any case, the article presents an adequate and objective workflow to study the existence of power law distributions that settles the status of these kind of measures in software development via repositories.
+In any case, the article presents an principled and objective workflow
+to study the existence of power law distributions that settles the
+status of these kind of measures in software development via
+repositories. 
 
 Thanks to this procedure, we hope we can constitute a new state of art, from which researchers can begin to study these and other properties of code repositories in order to understand which of them may be related to self-organization and which ones have a very low probability of that.  
 
@@ -516,7 +541,12 @@ This paper is also a starting point for the in-depth study of how,
 when and what produces complex behaviors or self-organized criticality in code repositories. We have only treated the number of commits, but there are many other parameters or variables (contributions per author, per file, blame chunks \footnote{Code lines that are next to each other and were modified together} or authors in different files)
 that can cause the appearance of power laws within the repositories, which could give us clues about a possible critical state of our system.
 
-On the other hand, as our sample size is relatively small, we could extend this study to different repositories, to detect possible general patterns or patterns related to repositories written in certain languages or ascribed to certain software projects.
+On the other hand, as our sample size is relatively small, we could
+extend this study to different repositories, to detect possible
+general patterns or patterns related to repositories written in
+certain languages or ascribed to certain software projects.
+
+% Mention software and scripts used, and that they are open source - JJ
 
 \bibliographystyle{apalike}
 \bibliography{geneura,biblio}
