@@ -11,22 +11,19 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Power laws in code repositories: A skeptical approach\\
-	\thanks{This paper has been supported in part by
-		project DeepBio (TIN2017-85727-C4-2-P)}
+\title{Power laws in code repositories: A skeptical approach
+  \thanks{ This paper has been supported in part by
+    project DeepBio (TIN2017-85727-C4-2-P)}
 }
 
-\author{\IEEEauthorblockN{1\textsuperscript{st} Bartolom\'{e} Ortiz}
-	\IEEEauthorblockA{\textit{Geneura Team,ETSIIT and CITIC} \\
-		\textit{University of Granada}\\
-		Granada, Spain \\
-		bortiz@ugr.es}
-	\and
-	\IEEEauthorblockN{2\textsuperscript{nd} J. J. Merelo}
-	\IEEEauthorblockA{\textit{Geneura Team,ETSIIT and CITIC} \\
-		\textit{University of Granada}\\
-		Granada, Spain \\
-		jjmerelo@ugr.es}
+\author{\IEEEauthorblockN{B. Ortiz}
+  \IEEEauthorblockA{Geneura Team, ETSIIT and CITIC, University of Granada (Spain)\\
+{\tt bortiz@ugr.es}}
+\and
+\IEEEauthorblockN{J. J. Merelo}
+\IEEEauthorblockA{Geneura Team, ETSIIT and CITIC, University of Granada (Spain)\\
+{\tt jmerelo@ugr.es}}\\
+
 }
 
 \maketitle
@@ -38,31 +35,27 @@ Software development as done using modern methodologies and source
 control systems has been often established as an example of
 self-organization, with code growing and evolving organically, through
 activities that do not stem from centralized power, leader or
-directives.  The main difficulty of these studies is that self
+directives.  The main challenge is proving these claims is that self
 organization cannot be detected through direct observation, but
-through measurements on the system, looking for features such as the
-existence of powerlaws over some features (such as changes) and sizes.
-Although published and proposed in many papers as such, power laws are
-more elusive than they might seem at first sight, so in this paper we
-present a statistically accurate set of tests that help us decide,
-from the way repositories are changing, if they are really distributed
-by a powerlaw, which could indicate us the existence of a state
-reached via self-organization.
+through measurements on the system, looking for hints such as the
+existence of powerlaws over some features, such as the size of changes
+over time.  The problem we intend to tackle in this paper is to check,
+for a chosen set of repositories we had already measured in the past,
+if the claims about power laws actually holds from a precise
+mathematical point of view, since, although shown as pervasive in the
+software engineering literature (and others), power laws are more
+elusive than they might seem at first sight. For that reason, in this
+paper we present a statistically accurate set of tests that will help
+us decide, from the way repositories are changing, if they are really
+distributed by a powerlaw, which could indicate us the existence of a
+state reached via self-organization, or actually, how accurately a
+power law fits the observed distribution of the size of changes of
+commits in git repositories of 16 open source repositories.  We
+revisit one of the most representative papers of these observations to
+reevaluate its results and compare them with the current status of the
+repositories analyzed in it, trying to elucidate if there has been any
+change in the possible presence, or not, of a power law.
 
-We revisit one of the most representative papers of these observations to reevaluate its results and compare them
-with the current status of the repositories analyzed in it.
-
-% Not clear what's the gist of this abstract. You can read it as 
-% * We _know_ that code repositories self-organize
-% * But we don't know how to detect self organization
-% * So we have to find power laws
-% * Some people have found them
-% * But in many cases it's not statistically significant
-% * We are going to propose a mathematical methodology to actually find power laws
-% * And revisit our old paper and data to find out if it's really the case that there is a power law, or that we can't affirm that there is not one.
-
-
-% Here we add the findings and conclusions
 
 \end{abstract}
 

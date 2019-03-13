@@ -6,3 +6,4 @@ auto/
 *.blg
 *.log
 *.pdf
+.RData
