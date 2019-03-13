@@ -51,7 +51,7 @@ software engineering literature (and others), power laws are more
 elusive than they might seem at first sight. For that reason, in this
 paper we present a statistically accurate set of tests that will help
 us decide, from the way repositories are changing, if they are really
-distributed by a powerlaw, which could indicate us the existence of a
+distributed by a power law, which could indicate us the existence of a
 state reached via self-organization, or actually, how accurately a
 power law fits the observed distribution of the size of changes of
 commits in git repositories of 16 open source repositories.  We
@@ -81,12 +81,12 @@ how confidently we are about claiming that our system is in a critical state, si
 are usually correlated with the appearance of a power law \cite{newman2005power}. % cite needed -bart
 
 Moreover, it is interesting to see if there is some kind of evolution in data. 
-A change in the distribution that explain the data could be originated by a 
-phase change, and phase change happend by passing a critical state. 
+A change in the distribution that explain the data, could be originated by a 
+phase change, and a phase change happens by passing a critical state. 
 
 However, during this process, we have to justify every conclusion we get, not only 
 by fitting our data, but by giving a proper statistical measure of the probability 
-of our conclusions, that is, following an standarize mathematical method based on
+of our conclusions, that is, following an standardize mathematical method based on
 hypothesis testing.% Clarify what you mean by "A distorted version of reality", saying clearly what you want: revisit claims for the existence of power laws, showing that in most cases they only seem a power law. - JJ
 
 % * Why is self-organization in repositories important? What would it imply -JJ
@@ -94,40 +94,40 @@ hypothesis testing.% Clarify what you mean by "A distorted version of reality", 
 
 Following \cite{merelo2017self} approach, we are going to comprehend code repositories
 by the interactions (events) made in them. Code repositories are one of the ways 
-software is developped nowadays. Multiple platforms like gitlab or github 
+software is developed nowadays. Multiple platforms like GitLab or GitHub 
 offer the possibility of interact with the code making changes, adding and deleting 
 lines. 
 All these interactions are reflected in an archive by what we call commits. From it
 we can obtain the data about how this code has been changed. 
 
-But to really start to understand the behaviour of software development teams as
+But to really start to understand the behavior of software development teams as
 reflected by their activity in repositories, we should not
-only try to fit a powerlaw in our data but making a statistically
+only try to fit a power law in our data but making a statistically
 accurate study to confirm how much evidence we have of this type of
-behaviour. 
+behavior. 
 
-Most of the measures and estimations about powerlaws in code repositories are collected 
-in studies like \cite{merelo2017self}, where some evidences of powerlaws are presented.
+Most of the measures and estimations about power laws in code repositories are collected 
+in studies like \cite{merelo2017self}, where some evidences of power laws are presented.
 However, since there are better methods to study this data \cite{clauset2009power}, 
-we are going to re-evalute all the results obtained, offering an alternative skeptic view
+we are going to re-evaluate all the results obtained, offering an alternative skeptic view
 of the existence of power laws.
 
 We have focused in this particular topic because of three reasons. 
 
 First of all, there are no 
 extensive analysis that addresses this question. We haven't found a comparative study 
-that offers data-based statistical measures to check if the powerlaw assumptions hold.
-So we are goint to fill this gap offering a complete statistically study about
-the evidences of powerlaws behaviour in a variety of repositories.
+that offers data-based statistical measures to check if the power law assumptions hold.
+So we are going to fill this gap offering a complete statistically study about
+the evidences of power laws behavior in a variety of repositories.
 
 Moreover, we are not going to evaluate just our evidences about the existence of a power law,
 we are going to offer a short range of distributions that can generate similar results and could
-easily be confounded by a powerlaw. This is an standard way to discover if our data is more likely
+easily be confounded by a power law. This is an standard way to discover if our data is more likely
 to be produced by other heavy-tailed distribution \cite{clauset2009power}, like the logNormal
-or the truncated powerlaw. 
+or the truncated power law. 
 
 Finally, since we are able to access to multiple years' data, we also interested in study the
-temporal evolution of the two previous analysis. Here our main objetive is to show how these measure could 
+temporal evolution of the two previous analysis. Here our main objective is to show how these measure could 
 have changed (if they have at all). We should remember that repositories are evolving system
 by definition, so they can experiment qualitative changes in his events distribution. Furthermore, even 
 if they preserve their behaviour, they can still change some distribution's parameters.
@@ -139,8 +139,8 @@ parameters \cite{newman2005power}).
 
 This way, we offer a test to analyze how much evidence there is for or
 against our assumptions in every step, and a set of comparatives to identify some relevant temporal
-changes, establishing a statiscally correct starting point to answer the question: Does software
-development really follows a powerlaw? 
+changes, establishing a statistically correct starting point to answer the question: Does software
+development really follows a power law? 
 
 Next, we will explain our methodology followed by the results obtained,
 closing with our conclusions. 
