@@ -76,7 +76,7 @@ from our system. This property is intrinsically related to the scale-free behavi
 these systems exhibit, that is, systems where there is no single characteristic event size \cite{golyk20self}.
 Understanding what distribution is producing our data gives us insights of
 how confidently we are about claiming that our system is in a critical state, since this states
-are usually correlated with the appearance of a power law \cite{newman2005power}. % cite needed -bart
+are usually correlated with the appearance of a power law \cite{newman2005power}.
 
 Moreover, it is interesting to see if there is some kind of evolution in the distribution the data follows. 
 A change in the distribution that explain the data could be originated by a 
@@ -87,8 +87,6 @@ by fitting our data, but by giving a proper statistical measure of the probabili
 of our conclusions, that is, following an standardize mathematical method based on
 hypothesis testing.
 
-% * Why is self-organization in repositories important? What would it imply -JJ
-% I 'm not sure about how to "attack" this question. - Bart
 In our case, we are mainly interested in code repositories. The
 existence or not of a critical state is essential to understand the
 processes taking place in free software repositories, which are
@@ -187,6 +185,7 @@ mine their information.
 \section{Methodology}
 \label{sec:method}
 
+In this part we are going to explain the methods used in our research. It is divided in four sections, explaining all procedures used from the data extraction to the visualization. We emphasize the second and third, being the ones that really represent a conceptual change in the analysis of the existence of power laws in code repositories.
 % You normally write a small introduction to every section. You can't
 % just set the first subsection after the section header - JJ
 
@@ -208,7 +207,7 @@ February 2019.
 The way we look at changes in the repository was initially proposed by \cite{Merelo2016:repomining} and was also used in
 \cite{merelo2017self}, where a deeper explanation can be found.
 
-% We need to rewrite all of this.
+
 This procedure is based on three main concepts:
 \begin{itemize}
 	\item The usage of a discrete timeline formed by the
@@ -313,7 +312,6 @@ plots at it is stated in \cite{newman2005power}.
 
 \section{Results}
 \label{res}
-% The whole idea about using .Rnw is to have this generated automatically. Maybe next time - JJ
 \begin{table*}[h!tbp]
 	\caption{2017 Parameters with power law fitting}
 	\begin{center}
@@ -375,7 +373,7 @@ webpack &50.0  &1.481958114820392  &0.00906295021690492 \\
 %
 %
 First, analyzing the parameters of the possible power law distribution, we find that in those repositories with low variation of the $x_{min}$ parameter there is a lack of correlation between the changes in the estimated starting point from which the distribution of power law starts and the scale parameter, $\alpha$. Even if small changes in $xmin$ produce small changes in $\alpha$, the lack of correlation probably means that this changes 
-are the result of the natural stochasticity of the evolution process.  % What is the implication of this? This is a conference, it's not a Maths conference, you need to really explain what this is about- JJ
+are the result of the natural stochasticity of the evolution process.
 
 However, as it can be seen in Tables \ref{tab:2017pars} and
 \ref{tab:2019pars}, repositories such as Django, which have a strong
@@ -467,9 +465,6 @@ We would like to remark that, even in smaller plots like \ref{fig:pl2017} and \r
 
 A proper example of this kind of biased assumptions is Fig. \ref{fig:mojo}. Seen the Mojo distribution and power law fit we can suspect the existence of a power law in the repository. Its distribution that also remains in time till 2019. This can be an indicative that this repository is self-organizing to stay in that point. But even in this case, the probability of a power law is only, again, \textit{moderate}.
 
-
-% following pictures take too long to compile everytime we create the pdf, so I
-% create them out of the document.
 % No repository with "high" rank? - JJ
 \begin{figure*}[htbp]
 	\centerline{\includegraphics[width=0.95\textwidth]{plots/mojo-2017.eps}}
@@ -508,10 +503,6 @@ A proper example of this kind of biased assumptions is Fig. \ref{fig:mojo}. Seen
 
 \section{Conclusions}\label{conc}
 
-
-% Several things we can do in the conclusions
-% * So, most repositories are _not_ actually self-organized because they do not follow a power law? Answer: We can't affirm that. Power laws only manifest themselves in critical states; self-organization will still take place. 
-
 In general, we should always use a standard mathematical approach in
 order to affirm any behaviour in our data's distribution. That way, we
 can assure that our results are unbiased (not based in our sight or
@@ -543,7 +534,6 @@ repositories.
 
 Thanks to this procedure, we hope we can constitute a new state of art, from which researchers can begin to study these and other properties of code repositories in order to understand which of them may be related to self-organization and which ones have a very low probability of that.  
 
-% There is always a "future work" paragraph here. Where do you go from here?  - JJ
 This paper is also a starting point for the in-depth study of how,
 when and what produces complex behaviors or self-organized criticality in code repositories. We have only treated the number of commits, but there are many other parameters or variables (contributions per author, per file, blame chunks \footnote{Code lines that are next to each other and were modified together} or authors in different files)
 that can cause the appearance of power laws within the repositories, which could give us clues about a possible critical state of our system.
@@ -553,6 +543,7 @@ extend this study to different repositories, to detect possible
 general patterns or patterns related to repositories written in
 certain languages or ascribed to certain software projects.
 
+We would like to conclude pointing out that all the software used in this research (being the main ones R\cite{R}, Python \cite{CS-R9526} and \LaTeX) is open source. Furthermore, all the scripts used and data obtained (curated and not curated) are open and can be checked at \url{https://github.com/geneura-papers/2019-SASO-Repos-Powerlaws}.
 % Mention software and scripts used, and that they are open source - JJ
 
 \bibliographystyle{apalike}
