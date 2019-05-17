@@ -32,15 +32,14 @@
 \begin{abstract}
   
   Software development as done using modern methodologies and source
-  control systems has been often established as an example of
+  control management systems has been often established as an example of
   self-organization, with code growing and evolving organically,
   through activities that do not stem from centralized power, leader
-  or directives.  The main challenge is proving these claims is that
+  or directives.  The main challenge in proving these claims is that
   self organization cannot be detected through direct observation, but
   through measurements on the system, looking for hints such as the
   existence of power laws over some features, such as the size of
-  changes over time.  The problem we intend to tackle in this paper is
-  to check, for a chosen set of repositories we had already measured
+  changes over time.  The problem we intend to tackle in this paper is to establish a methodology for checking, for a chosen set of repositories we had already measured
   in the past, if the claims about power laws actually holds from a
   precise mathematical point of view, since, although shown as
   pervasive in the software engineering literature (and others), power
@@ -165,12 +164,13 @@ against our assumptions in every step, and a set of comparatives to
 identify some relevant temporal changes, establishing a statistically
 correct result about the existence of power laws in repositories.
 
-All these questions lead us to our final result: not only power laws
-should not be used solely to address the question of self organization
+All these questions lead us to our final result: power laws is not the only thing that should be used to address the question of self organization
 in repositories \cite{alderson2010contrasting}, but even if we use
 them, the statistical significance of these fits is very low (which
 means that other distributions at least the same probability of being
 generating the data).
+
+% Please explain if this actually means there's no self-organization, or that we should look for other additional measures or indicators - JJ
 
 Next, we will explain our methodology followed by the results
 obtained, closing with our conclusions.
@@ -182,10 +182,10 @@ obtained, closing with our conclusions.
 
 The study of code repositories from the point of view of
 self-organized criticality has not followed a continuous line of
-investigation.
+investigation. % So? - JJ
 
 On the one hand, we find that self-organized criticality has been
-describe by a wide variety of code repositories with a certain
+described by a wide variety of code repositories with a certain
 probability. These studies can be found
 in\cite{wu2007empirical,gorshenev2004punctuated}, but they are not the
 only ones of this kind. Tests on the possible self-organized
@@ -271,6 +271,8 @@ This procedure is based on three main concepts:
 \item We take the largest value from the inserted and deleted lines of
   code.
 \end{itemize}
+
+Please note that, in principle, we are not interested in the number of developers that participate in the project. A certain amount of developers is not a necessary condition for self-organization, but in any case we are interested in detecting power laws in these time series of change sizes in repositories, which do not include data at all on the number of users. The repositories we have been analyzing here do have a wide range of users, from one or two to several dozens but, as indicated, our methodology does not need to include information on the number of users.
 
 Up to this point, there is nothing new. But is the way that we
 evaluate our results that differs from previous analysis.
