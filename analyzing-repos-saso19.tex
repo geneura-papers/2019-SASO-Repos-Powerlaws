@@ -31,8 +31,8 @@
 
 \begin{abstract}
   
-  Software development as done using modern methodologies and source
-  control management systems has been often established as an example of
+  Software development, as done using modern methodologies and source
+  control management systems, has been often established as an example of
   self-organization, with code growing and evolving organically,
   through activities that do not stem from centralized power, leader
   or directives.  The main challenge in proving these claims is that
@@ -40,7 +40,7 @@
   through measurements on the system, looking for hints such as the
   existence of power laws over some features, such as the size of
   changes over time.  The problem we intend to tackle in this paper is to establish a methodology for checking, for a chosen set of repositories we had already measured
-  in the past, if the claims about power laws actually holds from a
+  in the past, if the claims about power laws actually hold from a
   precise mathematical point of view, since, although shown as
   pervasive in the software engineering literature (and others), power
   laws are more elusive than they might seem at first sight. For that
@@ -77,11 +77,9 @@ are usually correlated with the appearance of a power law
 \cite{newman2005power}.
 
 Moreover, it is interesting to see if there is some kind of evolution
-in the distribution the data follows.  A change in the distribution
-that explain the data could be originated by a phase change, and, for
-a phase change to happen, sooner or later, we will cross a momentary
-critical
-state. % I don't like how this sentence is built... Too roundabout - JJ
+in the distribution of the data.  A change in the distribution
+could be originated by a phase change, which usually implies that
+we have crossed a momentary critical state described by a power law. % I don't like how this sentence is built... Too roundabout - JJ.  Changed
 
 However, during the process of investigating the existence of self
 organization, or the change to a critical state, we have to justify
@@ -112,7 +110,7 @@ making changes, adding and deleting lines.  All these interactions are
 reflected in an archive by the so called commits. From this archive we
 can obtain the data about how this code has been changed. Although
 these changes sometimes obey issues with the code, or bug fixes, in
-many cases they simply are piecewise improvements or code changes that
+many cases they simply are piece-wise improvements or code changes that
 are decided by programmers themselves.
 
 But to really start to understand the behavior and possible
@@ -164,13 +162,13 @@ against our assumptions in every step, and a set of comparatives to
 identify some relevant temporal changes, establishing a statistically
 correct result about the existence of power laws in repositories.
 
-All these questions lead us to our final result: power laws is not the only thing that should be used to address the question of self organization
-in repositories \cite{alderson2010contrasting}, but even if we use
+All these questions lead us to our final result: power laws are not the only concept that should be used to address the question of self organization
+in repositories \cite{alderson2010contrasting}, we should use additional measures to assure our conclusions. Even if we use
 them, the statistical significance of these fits is very low (which
-means that other distributions at least the same probability of being
+means that other distributions have at least the same probability of being
 generating the data).
 
-% Please explain if this actually means there's no self-organization, or that we should look for other additional measures or indicators - JJ
+% Please explain if this actually means there's no self-organization, or that we should look for other additional measures or indicators - JJ Adressed in line 166
 
 Next, we will explain our methodology followed by the results
 obtained, closing with our conclusions.
@@ -182,7 +180,8 @@ obtained, closing with our conclusions.
 
 The study of code repositories from the point of view of
 self-organized criticality has not followed a continuous line of
-investigation. % So? - JJ
+investigation. Methods and conclusions often change from one research paper to another,
+making difficult to compare results and possible implications. % So? - JJ Adressed in line 184
 
 On the one hand, we find that self-organized criticality has been
 described by a wide variety of code repositories with a certain
@@ -470,10 +469,8 @@ natural stochasticity of the evolution process.
 However, as it can be seen in Tables \ref{tab:2017pars} and
 \ref{tab:2019pars}, repositories such as Django, which have a strong
 variation in the initial point, also have a greater variation in the
-scale parameter. This is produce because of a change in the overall
-distribution. The structure of power law is starting in other point of
-the data which obviously results in a different power law fit that is
-probably different from the 2017's fit % Implying what? - JJ
+scale parameter. This is not produced because of a global change in the overall
+distribution. The main reason for this change is the variation of the $x_{min}$ parameter, due to the existence of a different range of commits that fits a powerlaw better than the previous one. % Implying what? - JJ Strong variations in the parameters are not been producing by a change in the distribution, but due to a change in the starting parameter. Adressed in 473
 %
 \begin{table*}[h!tbp]
   \caption{2017 summary results}
@@ -538,14 +535,14 @@ probably different from the 2017's fit % Implying what? - JJ
 Another special remark should be addressed to Tensorflow. The
 distribution fit of the repository in 2019 has caused a little
 controversy between \cite{alstott2014powerlaw} and
-\cite{gillespie2015power}. We believe the main reason for that is the
-two different section detected by their algorithms. One package gives
+\cite{gillespie2015power}, as the final numerical results where different.
+ We believe the main reason for that is the
+two different sections detected by their algorithms. One package gives
 more probability of fitting a power law between 10 to $10^5$ commit
 size and the other starting from $10^5$ commit size till the
 end. However, choosing different starting points produced similar
-results in the final
-tests. % "has been" or "has caused"? What is the nature
-% of that controversy? - JJ
+results in the final tests. % "has been" or "has caused"? What is the nature
+% of that controversy? - JJ Stochasticity
 
 After analyzing the parameters estimated by assuming a power law fit,
 it is time to check what are 
@@ -582,10 +579,14 @@ indicative that this repository is self-organizing to stay in that
 point. But even in this case, the probability of a power law is only,
 again, \textit{moderate}.
 
+On overall the higher rank is not achieved in any repository. We can only 
+state that in most of the repositories a power law could explain the data, 
+but, other distributions are equally probable.
+
 % No repository with "high" rank? - JJ No, maximum rank achieved is
 % moderate, that is, PL is not discard but there are other that could
 % fit too
-% Please say that in the text - JJ
+% Please say that in the text - JJ adressed in line 584
 \begin{figure*}[htbp]
   \centerline{\includegraphics[width=0.95\textwidth]{plots/mojo-2017.eps}}
   \caption{PDF plot of a repository with \textit{Moderate} rank: Mojo
@@ -646,8 +647,9 @@ possible critical state.
 
 Furthermore we would like to explore the possible causes of such
 dramatic changes as the ones seen in repositories like Django, since
-they can be related to a possible phase change. % But is there a power
-% law? - JJ
+they may be related to a possible phase change. % But is there a power
+% law? - JJ There is prominent probability that powerlaw fits different regions, as well
+% as other heavy tailed distributions in 2019. But there was not that probability in 2017.
 
 In any case, the article presents an principled and objective workflow
 to study the existence of power law distributions that settles the
