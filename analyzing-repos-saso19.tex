@@ -324,7 +324,7 @@ $x_{min}$ and is our first parameter.
 
 Once we have the first value, we proceed to estimate the scale of our
 power law.  As it is shown in papers like \cite{newman2005power,
-  clauset2009power}, least square method is a poor but wide-spreaded
+  clauset2009power}, least square method is a poor but wide-spread
 way to proceed when estimating the scale parameter. Instead, we are
 going to use a direct method describe in \cite{clauset2009power} and
 implemented in \cite{alstott2014powerlaw} that use the data values we
@@ -339,7 +339,7 @@ lacking in \cite{merelo2017self} and they are relevant independently
 our first test's results, since they usually offer an unbiased look of
 the data .
 
-Taking into account that our main question is wether a power law is
+Taking into account that our main question is whether a power law is
 the best description of our data, we choose to apply a comparative
 test that could evaluate if there are any alternative distribution
 that could have generated our data with greater likelihood than a
@@ -470,7 +470,7 @@ However, as it can be seen in Tables \ref{tab:2017pars} and
 \ref{tab:2019pars}, repositories such as Django, which have a strong
 variation in the initial point, also have a greater variation in the
 scale parameter. This is not produced because of a global change in the overall
-distribution. The main reason for this change is the variation of the $x_{min}$ parameter, due to the existence of a different range of commits that fits a powerlaw better than the previous one. % Implying what? - JJ Strong variations in the parameters are not been producing by a change in the distribution, but due to a change in the starting parameter. Adressed in 473
+distribution. The main reason for this change is the variation of the $x_{min}$ parameter, due to the existence of a different range of commits that fits a power law better than the previous one. % Implying what? - JJ Strong variations in the parameters are not been producing by a change in the distribution, but due to a change in the starting parameter. Adressed in 473
 %
 \begin{table*}[h!tbp]
   \caption{2017 summary results}
@@ -627,18 +627,18 @@ but, other distributions are equally probable.
 \section{Conclusions}\label{conc}
 
 In general, we should always use a standard mathematical approach in
-order to affirm any behaviour in our data's distribution. That way, we
-can assure that our results are unbiased (not based in our sight or
-plots) and they have been tested statistically. This is what we have
-done in this paper, that not only uses that on data already published,
+order to affirm any behaviour in the distribution of our data. That way, we
+can be assured that our results are unbiased, not simply based in our sight or
+plots, and they have been tested statistically. This is what we have
+done in this paper, that not only uses that methodology on data already published,
 but also updates the data checking whether there has been any
 evolution in the actual existence of a power law in the repositories
 under study.
 
 In general, the probability of finding a power law in the repositories
-studied is quite low, so, up to now, we can not affirm categorically
+studied is quite low, so, up to now, we can not categorically affirm 
 that the studied systems are in a critical state due to
-self-organization.
+self-organization, at least from this point of view that uses the size of changes in every commit in a repository.
 
 This result, however, does not imply that there is not any kind of
 self-organization or even a power law, but that the systems have not
@@ -656,7 +656,7 @@ to study the existence of power law distributions that settles the
 status of these kind of measures in software development via
 repositories.
 
-Thanks to this procedure, we hope we can constitute a new state of
+Thanks to this procedure, we hope we can establish a new state of
 art, from which researchers can begin to study these and other
 properties of code repositories in order to understand which of them
 may be related to self-organization and which ones have a very low
@@ -666,7 +666,7 @@ This paper is also a starting point for the in-depth study of how,
 when and what produces complex behaviors or self-organized criticality
 in code repositories. We have only treated the number of commits, but
 there are many other parameters or variables (contributions per
-author, per file, blame chunks \footnote{Code lines that are next to
+author, per file, blame chunks sizes \footnote{Code lines that are next to
   each other and were modified together} or authors in different
 files) that can cause the appearance of power laws within the
 repositories, which could give us clues about a possible critical
@@ -682,6 +682,10 @@ this research (being the main ones R\cite{R}, Python \cite{CS-R9526}
 and \LaTeX) is open source. Furthermore, all the scripts used and data
 obtained (curated and not curated) are open and can be checked at
 \url{https://github.com/geneura-papers/2019-SASO-Repos-Powerlaws}.
+
+\section{Acknowledgements}
+
+This paper has been supported in part by project DeepBio (TIN2017-85727-C4-2-P).
 
 \bibliographystyle{apalike}
 \bibliography{geneura,biblio}
